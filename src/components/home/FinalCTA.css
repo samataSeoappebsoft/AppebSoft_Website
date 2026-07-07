@@ -1,0 +1,196 @@
+.final-cta {
+  min-height: 100vh;
+
+  background: #020059;
+
+  color: #fff;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 120px 5%;
+}
+
+/* glow */
+
+.cta-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      rgba(1, 174, 248, 0.5),
+      transparent 70%
+    );
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+
+  filter: blur(60px);
+
+  z-index: 1;
+}
+
+/* content */
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  width: 100%;
+}
+
+/* heading */
+
+/* .cta-heading {
+  overflow: hidden;
+} */
+
+.cta-line h2 {
+  font-size:16px;
+
+  line-height: .82;
+
+  font-weight: 900;
+
+  letter-spacing: -5px;
+}
+
+.outline {
+  color: transparent;
+
+  -webkit-text-stroke:
+    2px #62bdec;
+}
+
+/* button */
+
+.cta-button {
+  margin-top: 70px;
+
+  border: none;
+
+  background: #7128ef;
+
+  color: white;
+
+  padding: 24px 42px;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  border-radius: 100px;
+
+  cursor: pointer;
+
+  transition: .4s ease;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.cta-button span {
+  transition: .4s ease;
+}
+
+.cta-button:hover {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.cta-button:hover span {
+  transform: translateX(10px);
+}
+
+/* bottom text */
+
+.cta-bottom {
+  margin-top: 80px;
+
+  opacity: .45;
+
+  letter-spacing: 4px;
+
+  font-size: .8rem;
+
+  animation:
+    fadeLoop 2s ease infinite;
+}
+
+@keyframes fadeLoop {
+  0% {
+    opacity: .25;
+  }
+
+  50% {
+    opacity: .7;
+  }
+
+  100% {
+    opacity: .25;
+  }
+}
+
+/* grain */
+
+.final-cta::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/noise.png");
+
+  opacity: .05;
+
+  pointer-events: none;
+}
+
+/* mobile */
+
+@media (max-width: 768px) {
+  .cta-line {
+    font-size: 40px;
+
+    letter-spacing: -2px;
+  }
+
+  .cta-button {
+    margin-top: 50px;
+
+    padding: 18px 30px;
+  }
+
+  .cta-bottom {
+    margin-top: 50px;
+  }
+
+  .cta-glow {
+    width: 300px;
+    height: 300px;
+  }
+}

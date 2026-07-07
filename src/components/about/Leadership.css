@@ -1,0 +1,53 @@
+.pld {
+  padding: 140px 8%;
+  background: #020059;
+  color: white;
+}
+
+.pld-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pld-header h2 {
+  font-size: 3rem;
+}
+
+.pld-header p {
+  color: rgba(255,255,255,0.6);
+}
+
+.pld-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.pld-card {
+  padding: 40px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.4s ease;
+}
+
+.pld-card h3 {
+  color: #62bdec;
+}
+
+.pld-card p {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+
+.pld-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255,107,53,0.4);
+}
+
+@media (max-width: 900px) {
+  .pld-grid {
+    grid-template-columns: 1fr;
+  }
+}

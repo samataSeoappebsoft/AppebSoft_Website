@@ -1,0 +1,160 @@
+.pac {
+  padding: 140px 8%;
+  background: #020059;
+  color: white;
+}
+
+.pac-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pac-header h2 {
+  font-size: 3rem;
+}
+
+.pac-header p {
+  color: rgba(255,255,255,0.6);
+}
+
+.pac-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.pac-card {
+  padding: 40px;
+  border-radius: 22px;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.4s ease;
+}
+
+.pac-card h3 {
+  font-size: 2.5rem;
+  color: #62bdec;
+}
+
+.pac-card p {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.65);
+}
+
+.pac-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255,107,53,0.4);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 991px) {
+
+  .pac{
+    padding:100px 40px 70px;
+  }
+
+  .pac-header{
+    margin-bottom:50px;
+  }
+
+  .pac-header h2{
+    font-size:2.6rem;
+  }
+
+  .pac-header p{
+    max-width:600px;
+    margin:15px auto 0;
+    line-height:1.8;
+  }
+
+  .pac-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .pac-card{
+    padding:35px 30px;
+  }
+
+  .pac-card h3{
+    font-size:2.2rem;
+  }
+
+}
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+  .pac{
+    padding:80px 20px 60px;
+  }
+
+  .pac-header{
+    margin-bottom:40px;
+  }
+
+  .pac-header h2{
+    font-size:2.1rem;
+    line-height:1.2;
+  }
+
+  .pac-header p{
+    font-size:15px;
+    line-height:1.7;
+    margin-top:15px;
+  }
+
+  .pac-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .pac-card{
+    padding:30px 24px;
+  }
+
+  .pac-card h3{
+    font-size:2rem;
+  }
+
+  .pac-card p{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width:480px){
+
+  .pac{
+    padding:70px 16px 50px;
+  }
+
+  .pac-header h2{
+    font-size:1.8rem;
+  }
+
+  .pac-card{
+    padding:25px 20px;
+    border-radius:18px;
+  }
+
+  .pac-card h3{
+    font-size:1.8rem;
+  }
+
+  .pac-card p{
+    font-size:14px;
+  }
+
+}

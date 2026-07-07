@@ -1,0 +1,177 @@
+.footer {
+  background: #020059;
+
+  color: #fff;
+
+  padding: 120px 8% 50px;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* giant background text */
+
+.footer::before {
+  content: "CREATE";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-size: 18vw;
+
+  font-weight: 900;
+
+  color: rgba(255,255,255,.02);
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+/* top */
+
+.footer-top {
+  position: relative;
+
+  z-index: 2;
+}
+
+.footer-tag {
+  color: #62bdec;
+
+  letter-spacing: 5px;
+
+  font-size: 12px;
+}
+
+.footer-top h2 {
+  margin-top: 25px;
+
+  font-size:
+    clamp(4rem, 10vw, 9rem);
+
+  line-height: .85;
+
+  font-weight: 900;
+}
+
+/* middle */
+
+.footer-middle {
+  margin-top: 80px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 80px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.footer-middle p {
+  max-width: 500px;
+
+  line-height: 1.8;
+
+  opacity: .75;
+
+  font-size: 1.1rem;
+}
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 1.1rem;
+
+  transition: .3s;
+}
+
+.footer-links a:hover {
+  color: #62bdec;
+
+  transform: translateX(10px);
+}
+
+/* bottom */
+
+.footer-bottom {
+  margin-top: 100px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  position: relative;
+
+  z-index: 2;
+
+  opacity: .7;
+}
+
+/* orange glow */
+
+.footer::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      rgba(255,107,61,.08),
+      transparent 70%
+    );
+
+  right: -250px;
+  bottom: -250px;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+
+  .footer-middle {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .footer-top h2 {
+    font-size: 3rem;
+  }
+}

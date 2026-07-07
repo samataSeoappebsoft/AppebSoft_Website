@@ -1,0 +1,73 @@
+.services-3d {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0b0b0b, #020059 60%);
+  color: white;
+  padding: 160px 10%;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+/* header */
+.services-head {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.services-head span {
+  color: #62bdec;
+  letter-spacing: 6px;
+  font-size: 12px;
+}
+
+.services-head h2 {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 800;
+  margin-top: 15px;
+  line-height: 1;
+}
+
+/* grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 3D card */
+.service-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding: 26px;
+  border-radius: 16px;
+
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+
+  transform-style: preserve-3d;
+
+  transition: transform 0.2s ease, border-color 0.3s ease;
+
+  will-change: transform;
+}
+
+/* hover depth */
+.service-card:hover {
+  border-color: #62bdec;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,350 @@
+/* ==========================================
+   WHO WE ARE
+========================================== */
+
+.whoSection {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #020059;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 8%;
+    color: #fff;
+}
+
+/* Background Typography */
+
+.bg-word {
+    position: absolute;
+    top: 50%;
+    left: -8%;
+    transform: translateY(-50%);
+    font-size: clamp(10rem, 22vw, 24rem);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.025);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    letter-spacing: -8px;
+}
+
+/* Floating Technology Words */
+
+/* .floating {
+  position: absolute;
+  font-size: .9rem;
+  color: rgba(255,255,255,.25);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 1;
+} */
+
+/* .react{
+    top:18%;
+    left:8%;
+}
+
+.next{
+    top:26%;
+    right:10%;
+}
+
+.node{
+    bottom:22%;
+    left:12%;
+}
+
+.ai{
+    top:55%;
+    right:15%;
+}
+
+.cloud{
+    bottom:15%;
+    right:30%;
+}
+
+.seo{
+    top:12%;
+    left:45%;
+} */
+
+/* Main */
+
+.content {
+    position: relative;
+    z-index: 5;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smallTitle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: #62bdec;
+    font-size: .85rem;
+    letter-spacing: 4px;
+    margin-bottom: 70px;
+}
+
+/* Story */
+.story {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 80px 0 140px;
+}
+
+.who-line {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 0 60px;
+
+    font-size: clamp(3rem, 7vw, 6.8rem);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    will-change: transform, opacity;
+
+}
+
+/* Glass Card */
+
+.who-card {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 60px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(18px);
+
+    opacity: 0;
+
+    transform: translateY(120px);
+
+}
+.who-card h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.who-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, .72);
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+/* Divider */
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, .08);
+    margin-bottom: 35px;
+}
+
+/* Stats */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:40px;
+
+margin-top:40px;
+
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h4{
+
+font-size:3.8rem;
+
+margin-bottom:8px;
+
+color:#62bdec;
+
+font-weight:700;
+
+}
+
+.stats span{
+
+font-size:.9rem;
+
+letter-spacing:2px;
+
+color:rgba(255,255,255,.65);
+
+text-transform:uppercase;
+
+}
+
+/* Glow */
+
+.whoSection::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: #62bdec;
+    filter: blur(180px);
+    opacity: .08;
+    right: -200px;
+    top: -200px;
+}
+
+.whoSection::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #404fe4;
+    filter: blur(160px);
+    opacity: .05;
+    left: -180px;
+    bottom: -180px;
+}
+
+/* Hover */
+
+.who-card:hover {
+    border-color: rgba(255, 107, 53, .4);
+    transform: translateY(-8px);
+    transition: .5s;
+}
+
+/* Tablet */
+
+@media(max-width:992px) {
+
+    .story {
+        height: 220px;
+    }
+
+    .who-line {
+        font-size: 4.5rem;
+    }
+
+    .who-card {
+        padding: 40px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.story{
+
+height:180px;
+
+margin:50px 0 80px;
+
+}
+
+.who-line{
+
+font-size:2.3rem;
+
+padding:0 15px;
+
+letter-spacing:-1px;
+
+}
+
+.who-card{
+
+padding:30px;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .story {
+        height: 160px;
+    }
+
+    .who-line {
+        font-size: 2rem;
+    }
+
+    .who-card {
+        padding: 25px;
+    }
+
+}

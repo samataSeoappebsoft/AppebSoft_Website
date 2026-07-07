@@ -1,0 +1,473 @@
+/* ====================================================
+SECTION
+==================================================== */
+
+.service-cube-section {
+  position: relative;
+  min-height: 100vh;
+  background: #020059;
+  overflow: hidden;
+  color: #fff;
+  padding: 140px 8%;
+}
+
+/* ====================================================
+BACKGROUND
+==================================================== */
+
+.background-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 18vw;
+  font-weight: 900;
+
+  color: rgba(255,255,255,0.02);
+
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.service-cube-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(1, 174, 248, 0.5),
+      transparent 70%
+    );
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* ====================================================
+HEADER
+==================================================== */
+
+.service-header {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.service-header span {
+  color: #62bdec;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.service-header h2 {
+  margin-top: 20px;
+
+  font-size: clamp(3rem, 6vw, 7rem);
+
+  line-height: 0.9;
+
+  font-weight: 800;
+}
+
+/* ====================================================
+LAYOUT
+==================================================== */
+
+.service-layout {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 100px;
+}
+
+/* ====================================================
+LEFT SIDE
+==================================================== */
+
+.cube-area {
+  width: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.cube-wrapper {
+  perspective: 1800px;
+}
+
+/* ====================================================
+3D CUBE
+==================================================== */
+
+.cube {
+  width: 320px;
+  height: 320px;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+
+  transform: rotateX(-18deg);
+
+  cursor: grab;
+
+  transition: transform .2s;
+}
+
+.cube:active {
+  cursor: grabbing;
+}
+
+/* ====================================================
+FACES
+==================================================== */
+
+.face {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(25px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(1, 174, 248, 0.2),
+      rgba(1, 174, 248, 0.0001)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(0, 206, 252, 0.15),
+    0 30px 80px rgba(0,0,0,.5),
+    0 0 80px rgba(255,107,53,.08);
+}
+
+.face::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(1, 174, 248, 0.25),
+      transparent 60%
+    );
+}
+
+.face span {
+  font-size: 8rem;
+
+  font-weight: 900;
+
+  color: rgba(255,255,255,.15);
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ====================================================
+CUBE POSITIONS
+==================================================== */
+
+.front {
+  transform: translateZ(160px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(160px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(160px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(160px);
+}
+
+/* ====================================================
+NAVIGATION
+==================================================== */
+
+.cube-navigation {
+  display: flex;
+
+  gap: 25px;
+
+  margin-top: 60px;
+}
+
+.nav-number {
+  border: none;
+
+  background: transparent;
+
+  color: rgba(255,255,255,.3);
+
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all .4s ease;
+}
+
+.nav-number:hover {
+  color: #fff;
+}
+
+.nav-number.active {
+  color: #62bdec;
+
+  transform: scale(1.3);
+
+  text-shadow:
+    0 0 20px rgba(1, 174, 248, 0.5);
+}
+
+/* ====================================================
+RIGHT SIDE
+==================================================== */
+
+.content-panel {
+  width: 50%;
+}
+
+.content-inner {
+  max-width: 600px;
+}
+
+.service-number {
+  font-size: 8rem;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  color: rgba(255,255,255,.05);
+}
+
+.content-inner h3 {
+  margin-top: -20px;
+
+  font-size: clamp(2.5rem,4vw,5rem);
+
+  line-height: 1;
+
+  margin-bottom: 25px;
+}
+
+.content-inner p {
+  font-size: 1.05rem;
+
+  line-height: 1.9;
+
+  color: rgba(255,255,255,.7);
+
+  margin-bottom: 40px;
+}
+
+.content-tag{
+  margin-bottom: 20px;
+}
+
+/* ====================================================
+FEATURES GRID
+==================================================== */
+
+.features-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.feature-card {
+  padding: 24px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  font-weight: 600;
+
+  transition: .4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    #8062ec;
+
+  box-shadow:
+    0 15px 40px rgba(1, 174, 248, 0.5);
+}
+
+/* ====================================================
+RESPONSIVE
+==================================================== */
+
+@media (max-width: 991px) {
+
+  .service-layout {
+    flex-direction: column;
+  }
+
+  .cube-area,
+  .content-panel {
+    width: 100%;
+  }
+
+  .content-panel {
+    text-align: center;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cube {
+    width: 240px;
+    height: 240px;
+  }
+
+  .face {
+    width: 240px;
+    height: 240px;
+  }
+
+  .front {
+    transform: translateZ(120px);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(120px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(120px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(120px);
+  }
+
+  .face span {
+    font-size: 5rem;
+  }
+
+  .service-number {
+    font-size: 5rem;
+  }
+}
+
+.serviceSection {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #0f0f0f, #020059);
+  color: white;
+  padding: 0;
+}
+
+/* LOCK LAYOUT INSIDE VIEW */
+.layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 90px;
+}
+
+/* LEFT + RIGHT FIXED ALIGN */
+.left,
+.contentPanel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* RIGHT SIDE MUST NOT EXPAND PAGE */
+.contentPanel {
+  width: 50%;
+  overflow: hidden;
+}
+
+/* REMOVE ANY EXTRA MARGIN PUSH */
+.contentInner {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+/* BACKGROUND TEXT FIX */
+.bgText {
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.03;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* OPTIONAL: STOP SCROLL GLITCH FEEL */
+body {
+  overflow-x: hidden;
+}

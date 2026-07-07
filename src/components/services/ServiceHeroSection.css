@@ -1,0 +1,1228 @@
+/* ==========================================
+   SERVICE HERO
+   APPEBSOFT
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.service-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #020059;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 130px 8%;
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 18% 18%,
+      rgba(255,107,53,.14),
+      transparent 40%),
+
+    radial-gradient(circle at 85% 75%,
+      rgba(255,140,66,.12),
+      transparent 42%),
+
+    radial-gradient(circle at 50% 100%,
+      rgba(255,107,53,.08),
+      transparent 60%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+
+  mask-image:
+    radial-gradient(circle at center,
+    black 45%,
+    transparent 100%);
+}
+
+.noise-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: .22;
+
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 5px 5px;
+}
+
+/* ==========================
+   GLOW BLOBS
+========================== */
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+}
+
+.blob-a {
+
+  width: 430px;
+  height: 430px;
+
+  background: #62bdec;
+
+  top: -140px;
+  left: -140px;
+
+  opacity: .22;
+
+}
+
+.blob-b {
+
+  width: 370px;
+  height: 370px;
+
+  background: #404fe4;
+
+  bottom: -120px;
+  right: -100px;
+
+  opacity: .18;
+
+}
+
+.blob-c {
+
+  width: 300px;
+  height: 300px;
+
+  background: #62bdec;
+
+  top: 40%;
+  left: 45%;
+
+  opacity: .10;
+
+}
+
+/* ==========================
+   LEFT CONTENT
+========================== */
+
+.service-content {
+
+  position: relative;
+
+  width: 55%;
+
+  z-index: 5;
+
+}
+
+.service-tag {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 10px 22px;
+
+  border-radius: 50px;
+
+  background: rgba(1, 174, 248, 0.);
+
+  border: 1px solid rgba(1, 174, 248, 0.5);
+
+  color: #62bdec;
+
+  font-size: .82rem;
+
+  letter-spacing: 2px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  margin-bottom: 35px;
+
+}
+
+.headline-group {
+
+  overflow: hidden;
+
+}
+
+.service-line-1,
+.service-line-2,
+.changing-word {
+
+  font-size: clamp(3.3rem,7vw,6.2rem);
+
+  font-weight: 800;
+
+  line-height: .95;
+
+  letter-spacing: -3px;
+
+}
+
+.service-line-1 {
+
+  color: #ffffff;
+
+}
+
+.service-line-2,
+.changing-word {
+
+  color: #62bdec;
+  margin-top: 12px;
+
+}
+
+.service-description {
+
+  max-width: 650px;
+
+  margin-top: 35px;
+
+  color: rgba(255,255,255,.68);
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.service-actions {
+
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 45px;
+
+}
+
+.primary-btn,
+.secondary-btn {
+
+  cursor: pointer;
+
+  border: none;
+
+  padding: 18px 34px;
+
+  border-radius: 60px;
+
+  font-size: .95rem;
+
+  font-weight: 600;
+
+  transition: .35s;
+
+}
+
+.primary-btn1 {
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7128ef
+    );
+
+  box-shadow:
+    #62bdec;
+
+}
+
+.primary-btn:hover {
+
+  transform: translateY(-6px);
+
+
+
+}
+
+.secondary-btn {
+
+  color: #fff;
+
+  background: rgba(255,255,255,.05);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  backdrop-filter: blur(18px);
+
+}
+
+.secondary-btn:hover {
+
+  background: rgba(255,255,255,.08);
+
+  transform: translateY(-6px);
+
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.service-stats {
+
+  display: flex;
+
+  gap: 70px;
+
+  margin-top: 70px;
+
+}
+
+.stat h3 {
+
+  font-size: 2.7rem;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+
+}
+
+.stat span {
+
+  color: rgba(255,255,255,.65);
+
+  font-size: .95rem;
+
+  line-height: 1.6;
+
+}
+
+/* ==========================================
+   RIGHT SIDE
+========================================== */
+
+.floating-services {
+
+  position: relative;
+
+  width: 45%;
+
+  height: 780px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 5;
+
+}
+
+
+/* ==========================================
+   HERO IMAGE
+========================================== */
+
+.hero-circle {
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  z-index: 2;
+
+  border: 2px solid rgba(255,107,53,.18);
+
+  background: rgba(255,255,255,.04);
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+
+      0 0 0 10px rgba(255,107,53,.05),
+
+      0 0 70px rgba(255,107,53,.22),
+
+      inset 0 0 50px rgba(255,255,255,.06);
+
+}
+
+.hero-circle::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-25px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,107,53,.12);
+
+  animation:rotateRing 20s linear infinite;
+
+}
+
+.hero-circle::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-45px;
+
+  border-radius:50%;
+
+  border:1px dashed rgba(255,140,66,.15);
+
+  animation:rotateRingReverse 25s linear infinite;
+
+}
+
+.hero-circle img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:.8s;
+
+}
+
+.hero-circle:hover img{
+
+  transform:scale(1.08);
+
+}
+
+
+/* ==========================================
+   FLOATING CARDS
+========================================== */
+
+.floating-card{
+
+  position:absolute;
+
+  width:220px;
+
+  padding:24px;
+
+  border-radius:24px;
+
+  background:rgba(18,18,18,.72);
+
+  backdrop-filter:blur(24px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+
+      0 20px 50px rgba(0,0,0,.45),
+
+      0 0 35px rgba(255,107,53,.10);
+
+  transition:.45s;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  z-index:5;
+
+}
+
+.floating-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(
+
+      135deg,
+
+      rgba(255,255,255,.08),
+
+      transparent
+
+  );
+
+  opacity:0;
+
+  transition:.45s;
+
+}
+
+.floating-card:hover{
+
+  transform:
+
+      translateY(-12px)
+
+      scale(1.05);
+
+  border-color:#62bdec;
+
+  box-shadow:
+
+      0 30px 70px rgba(0,0,0,.55),
+
+      0 0 60px rgba(255,107,53,.35);
+
+}
+
+.floating-card:hover::before{
+
+  opacity:1;
+
+}
+
+
+/* ==========================================
+   CARD ICON
+========================================== */
+
+.service-icon{
+
+  width:68px;
+
+  height:68px;
+
+  border-radius:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:30px;
+
+  background:linear-gradient(
+
+      135deg,
+
+      #62bdec,
+
+      #404fe4
+
+  );
+
+  margin-bottom:18px;
+
+}
+
+.floating-card h4{
+
+  font-size:1.15rem;
+
+  font-weight:700;
+
+  color:#fff;
+
+  margin-bottom:10px;
+
+}
+
+.floating-card p{
+
+  font-size:.9rem;
+
+  line-height:1.7;
+
+  color:rgba(255,255,255,.65);
+
+}
+
+
+/* ==========================================
+   CARD POSITIONS
+========================================== */
+
+.card-1{
+
+  top:40px;
+
+  left:10px;
+
+}
+
+.card-2{
+
+  top:90px;
+
+  right:0;
+
+}
+
+.card-3{
+
+  top:320px;
+
+  left:-20px;
+
+}
+
+.card-4{
+
+  top:340px;
+
+  right:-10px;
+
+}
+
+.card-5{
+
+  bottom:60px;
+
+  left:40px;
+
+}
+
+.card-6{
+
+  bottom:20px;
+
+  right:40px;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1400px) {
+
+  .service-content {
+    width: 58%;
+  }
+
+  .floating-services {
+    width: 42%;
+  }
+
+  .floating-card {
+    width: 210px;
+    padding: 22px;
+  }
+
+  .hero-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+
+  .service-hero {
+    padding: 120px 6%;
+  }
+
+  .service-content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .floating-services {
+    width: 420px;
+  }
+
+  .floating-card {
+    width: 190px;
+  }
+
+  .hero-circle {
+    width: 270px;
+    height: 270px;
+  }
+
+}
+
+@media (max-width: 991px) {
+
+  .service-hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 120px 40px 80px;
+    min-height: auto;
+  }
+
+  .service-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .headline-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-description {
+    margin: 35px auto;
+  }
+
+  .service-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .service-stats {
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .floating-services {
+    position: relative;
+    width: 100%;
+    height: auto;
+    right: auto;
+    top: auto;
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+  }
+
+  .hero-circle {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto 30px;
+    grid-column: 1 / -1;
+  }
+
+  .floating-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 100%;
+    transform: none !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .service-hero {
+    padding: 100px 24px 70px;
+  }
+
+  .service-line-1,
+  .service-line-2 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  .service-description {
+    font-size: 1rem;
+  }
+
+  .service-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .service-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .floating-services {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .service-line-1,
+  .service-line-2 {
+    font-size: 2.3rem;
+  }
+
+  .service-tag {
+    font-size: .72rem;
+  }
+
+  .service-description {
+    font-size: .95rem;
+  }
+
+  .hero-circle {
+    width: 210px;
+    height: 210px;
+  }
+
+  .floating-card {
+    padding: 22px;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+}
+
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes floatY {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+@keyframes pulseGlow {
+
+  0% {
+    box-shadow: 0 0 25px rgba(255,107,53,.15);
+  }
+
+  50% {
+    box-shadow: 0 0 60px rgba(255,107,53,.4);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(255,107,53,.15);
+  }
+
+}
+
+@keyframes scrollMove {
+
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 58px;
+    opacity: 0;
+  }
+
+}
+
+.hero-circle {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020059;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #62bdec;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404fe4;
+}
+
+
+/* ===========================
+   TEXT SELECTION
+=========================== */
+
+::selection {
+  background: #62bdec;
+  color: #ffffff;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width:1400px){
+
+  .service-hero{
+    padding:130px 6%;
+  }
+
+  .service-content{
+    width:55%;
+  }
+
+  .floating-services{
+    width:40%;
+  }
+
+  .floating-card{
+    width:200px;
+    padding:22px;
+  }
+
+  .hero-circle{
+    width:280px;
+    height:280px;
+  }
+
+}
+
+
+@media (max-width:1200px){
+
+  .service-hero{
+    padding:120px 5%;
+  }
+
+  .service-content{
+    width:58%;
+  }
+
+  .floating-services{
+    width:38%;
+  }
+
+  .floating-card{
+    width:180px;
+    padding:20px;
+  }
+
+  .service-line-1,
+  .service-line-2{
+    font-size:4.2rem;
+  }
+
+  .service-description{
+    font-size:1rem;
+  }
+
+}
+
+
+@media (max-width:992px){
+
+  .service-hero{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:100px 40px 70px;
+
+    min-height:auto;
+
+  }
+
+  .service-content{
+
+    width:100%;
+    text-align:center;
+    order:1;
+
+  }
+
+  .headline-group{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+  }
+
+  .service-description{
+
+    margin:30px auto;
+    max-width:700px;
+
+  }
+
+  .service-actions{
+
+    justify-content:center;
+    flex-wrap:wrap;
+
+  }
+
+  .service-stats{
+
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:35px;
+
+  }
+
+  .floating-services{
+
+    position:relative;
+
+    width:100%;
+    height:auto;
+
+    right:auto;
+    top:auto;
+
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+    order:2;
+
+  }
+
+  .hero-circle{
+
+    position:relative;
+
+    top:auto;
+    left:auto;
+
+    transform:none;
+
+    margin:auto;
+
+    width:260px;
+    height:260px;
+
+    grid-column:1/-1;
+
+  }
+
+  .floating-card{
+
+    position:relative !important;
+
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+
+    width:100%;
+
+    transform:none !important;
+
+  }
+
+}
+
+
+@media (max-width:768px){
+
+  .service-hero{
+
+    padding:90px 25px 60px;
+
+  }
+
+  .service-tag{
+
+    font-size:.75rem;
+
+  }
+
+  .service-line-1,
+  .service-line-2{
+
+    font-size:3rem;
+
+    letter-spacing:-1px;
+
+  }
+
+  .service-description{
+
+    font-size:1rem;
+    line-height:1.8;
+
+  }
+
+  .service-actions{
+
+    flex-direction:column;
+    gap:16px;
+
+  }
+
+  .primary-btn,
+  .secondary-btn{
+
+    width:100%;
+
+  }
+
+  .service-stats{
+
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+
+  }
+
+  .floating-services{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .hero-circle{
+
+    width:230px;
+    height:230px;
+
+  }
+
+  .scroll-indicator{
+
+    display:none;
+
+  }
+
+}
+
+
+@media (max-width:480px){
+
+  .service-hero{
+
+    padding:80px 20px 50px;
+
+  }
+
+  .service-line-1,
+  .service-line-2{
+
+    font-size:2.2rem;
+
+  }
+
+  .service-description{
+
+    font-size:.95rem;
+
+  }
+
+  .floating-card{
+
+    padding:20px;
+
+  }
+
+  .service-icon{
+
+    width:60px;
+    height:60px;
+
+    font-size:1.6rem;
+
+  }
+
+  .floating-card h4{
+
+    font-size:1.15rem;
+
+  }
+
+  .floating-card p{
+
+    font-size:.9rem;
+
+  }
+
+  .hero-circle{
+
+    width:200px;
+    height:200px;
+
+  }
+
+}

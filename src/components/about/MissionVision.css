@@ -1,0 +1,86 @@
+.pmv {
+  padding: 140px 8%;
+  background: #020059;
+  color: white;
+  position: relative;
+}
+
+/* luxury glow */
+.pmv::before {
+  content: "";
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #62bdec 0%, transparent 70%);
+  opacity: 0.08;
+  top: -200px;
+  right: -300px;
+}
+
+.pmv-header {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.pmv-header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.pmv-header p {
+  margin-top: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+
+.pmv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.pmv-card {
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  position: relative;
+  transition: 0.5s ease;
+}
+
+.pmv-card span {
+  font-size: 0.8rem;
+  color: #62bdec;
+  letter-spacing: 3px;
+}
+
+.pmv-card h3 {
+  margin-top: 15px;
+  font-size: 1.6rem;
+}
+
+.pmv-card p {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+
+.pmv-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255,107,53,0.5);
+}
+
+.pmv-card.highlight {
+  background: linear-gradient(135deg, rgba(255,107,53,0.12), transparent);
+  border: 1px solid rgba(255,107,53,0.3);
+}
+
+@media (max-width: 900px) {
+  .pmv-grid {
+    grid-template-columns: 1fr;
+  }
+}

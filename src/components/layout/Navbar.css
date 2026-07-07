@@ -1,0 +1,185 @@
+/* =========================
+   NAVBAR
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+
+  top: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 95%;
+  max-width: 1500px;
+
+  height: 90px;
+
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 100px;
+
+  z-index: 9999;
+
+  transition:
+    all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================
+   AFTER SCROLL
+========================= */
+
+.navbar.scrolled {
+  backdrop-filter: blur(24px);
+
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .08);
+}
+
+/* =========================
+   INNER
+========================= */
+
+.navbar-inner {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  width: auto;
+  height: 100px;
+  object-fit: contain;
+
+  transition:
+    opacity .45s ease,
+    transform .45s ease;
+}
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-button {
+  padding: 14px 30px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+   all .45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.45);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   SCROLLED BUTTON
+========================= */
+
+.navbar.scrolled .menu-button {
+  color: #6C3BFF;
+
+  background: rgba(108, 59, 255, 0.06);
+
+  border-color: rgba(108, 59, 255, 0.30);
+}
+
+.navbar.scrolled .menu-button:hover {
+  background: #6C3BFF;
+
+  color: #ffffff;
+
+  border-color: #6C3BFF;
+
+  box-shadow: 0 15px 35px rgba(108, 59, 255, 0.25);
+
+  transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    height: 80px;
+
+    padding: 0 25px;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .menu-button {
+    padding: 12px 24px;
+
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    width: 94%;
+
+    height: 75px;
+
+    padding: 0 20px;
+
+    top: 15px;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  .menu-button {
+    padding: 10px 18px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+}

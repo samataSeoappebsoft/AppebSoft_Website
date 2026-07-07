@@ -1,0 +1,25 @@
+@import "./variables.css";
+@import "./typography.css";
+@import "./animations.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: white;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container);
+  margin: auto;
+}
+
+section {
+  position: relative;
+}
