@@ -9,65 +9,77 @@ gsap.registerPlugin(ScrollTrigger);
 function ManifestoScene() {
   const sectionRef = useRef();
 
-  useEffect(() => {
-    const phrases = gsap.utils.toArray(".phrase");
+useEffect(() => {
+  const phrases = gsap.utils.toArray(".phrase");
 
-    gsap.set(phrases, {
-      opacity: 0,
-      y: 100,
-      scale: 0.9,
-    });
+  gsap.set(phrases, {
+    opacity: 0,
+    y: 100,
+    scale: 0.95,
+  });
 
-    gsap.set(phrases[0], {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-    });
+  gsap.set(phrases[0], {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=7000",
-        pin: true,
-        scrub: 2,
-        anticipatePin: 1,
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top top",
+      end: `+=${phrases.length * 1000}`,
+      pin: true,
+      scrub: 1,
+      snap: {
+        snapTo: (value) => {
+          const step = 1 / (phrases.length - 1);
+          return Math.round(value / step) * step;
+        },
+        duration: 0.4,
+        ease: "power2.inOut",
       },
-    });
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    },
+  });
 
-    phrases.forEach((phrase, index) => {
-      if (index === 0) return;
+  phrases.forEach((phrase, index) => {
+    if (index === 0) return;
 
-      tl.to(phrases[index - 1], {
+    tl.to(
+      phrases[index - 1],
+      {
         opacity: 0,
-        y: -120,
-        scale: 1.15,
-        duration: 2,
-        ease: "power3.inOut",
-      });
+        y: -80,
+        scale: 1.05,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
 
-      tl.fromTo(
-        phrase,
-        {
-          opacity: 0,
-          y: 120,
-          scale: 0.85,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 2,
-          ease: "power3.inOut",
-        },
-        "<",
-      );
-    });
+    tl.fromTo(
+      phrase,
+      {
+        opacity: 0,
+        y: 80,
+        scale: 0.95,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      "<"
+    );
+  });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, []);
+  return () => {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  };
+}, []);
 
   return (
     <section className="manifesto-section" ref={sectionRef}>

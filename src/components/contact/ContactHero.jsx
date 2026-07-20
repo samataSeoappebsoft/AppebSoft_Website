@@ -177,7 +177,7 @@ function ContactHero() {
                 </option>
 
                 <option>
-                  UI UX Design
+                  UI/UX Design
                 </option>
 
               </select>

@@ -15,157 +15,121 @@ import "./PortfolioSection.css";
 
 const filters = [
   "All",
-  "Web",
-  "Mobile",
-  "Software",
+  "Corporate",
   "Ecommerce",
-  "UI UX",
+  "Healthcare",
+  "Industrial",
+  "Real Estate",
 ];
 
 const portfolio = [
   {
     id: 1,
-    category: "Web",
-    title: "Classified Buy & Sell Marketplace",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    category: "Industrial",
+    title: "Piab",
+    image: "/portfolio/piab.png",
+    link: "https://www.piab.com/",
     icon: Globe,
     description:
-      "Complete classified marketplace platform with Flutter mobile applications and Laravel admin panel.",
-    tech: ["Flutter", "Laravel", "MySQL", "REST API"],
+      "Corporate industrial website focused on vacuum automation, gripping and lifting solutions.",
+    tech: ["React", "UI/UX", "SEO"],
   },
 
   {
     id: 2,
-    category: "Web",
-    title: "Course Selling Website",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
-    icon: Globe,
+    category: "Ecommerce",
+    title: "Nasty Gal",
+    image: "/portfolio/nasty-gal.jpg",
+    link: "https://www.nastygal.com/",
+    icon: ShoppingBag,
     description:
-      "Online learning platform with secure payment integration and student management.",
-    tech: ["React", "Laravel", "Stripe", "MySQL"],
+      "Global fashion ecommerce platform with modern shopping experience and premium UI.",
+    tech: ["Ecommerce", "Responsive", "UX"],
   },
 
   {
     id: 3,
-    category: "Mobile",
-    title: "E Commerce App & Website",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80",
+    category: "Ecommerce",
+    title: "Suta",
+    image: "/portfolio/suta.jpg",
+    link: "https://suta.in/",
     icon: ShoppingBag,
     description:
-      "Complete ecommerce ecosystem including customer app and admin dashboard.",
-    tech: ["Flutter", "Laravel", "Firebase"],
+      "Premium Indian fashion and lifestyle ecommerce platform with beautiful storytelling.",
+    tech: ["Shopify", "UI/UX", "SEO"],
   },
 
   {
     id: 4,
-    category: "Mobile",
-    title: "Handy Services App",
-    image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=1200&q=80",
-    icon: Smartphone,
+    category: "Corporate",
+    title: "Ambey Group",
+    image: "/portfolio/ambey-group.jpg",
+    link: "https://ambeygroup.net/",
+    icon: Globe,
     description:
-      "Home service booking application connecting customers with professionals.",
-    tech: ["Flutter", "Laravel", "Firebase"],
+      "Corporate business website showcasing manufacturing excellence and global presence.",
+    tech: ["React", "Corporate", "Responsive"],
   },
 
   {
     id: 5,
-    category: "Mobile",
-    title: "All In One Delivery App",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80",
-    icon: Smartphone,
+    category: "Ecommerce",
+    title: "House of Indya",
+    image: "/portfolio/indya.jpg",
+    link: "https://www.houseofindya.com/",
+    icon: ShoppingBag,
     description:
-      "Multi purpose delivery application for grocery, medicine and food.",
-    tech: ["Flutter", "Laravel", "Google Maps"],
+      "Leading ethnic fashion ecommerce platform with premium shopping experience.",
+    tech: ["Ecommerce", "Performance", "SEO"],
   },
 
   {
     id: 6,
-    category: "Mobile",
-    title: "Food Delivery App",
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80",
-    icon: Smartphone,
+    category: "Real Estate",
+    title: "Sobha",
+    image: "/portfolio/sobha.jpg",
+    link: "https://www.sobha.com/",
+    icon: LayoutDashboard,
     description:
-      "Restaurant ordering platform with live delivery tracking.",
-    tech: ["Flutter", "Laravel", "Firebase"],
+      "Luxury real estate website showcasing premium residential and commercial properties.",
+    tech: ["Corporate", "CMS", "SEO"],
   },
 
   {
     id: 7,
-    category: "Web",
-    title: "Business Website Development",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
-    icon: Globe,
+    category: "Corporate",
+    title: "IDTL",
+    image: "/portfolio/IDTL.jpg",
+    link: "https://theidtl.com/",
+    icon: MonitorCog,
     description:
-      "Professional responsive business website with SEO optimization.",
-    tech: ["React", "Node.js", "MongoDB"],
+      "NABL accredited laboratory website providing diagnostic testing and healthcare services.",
+    tech: ["React", "Corporate", "Responsive"],
   },
 
   {
     id: 8,
-    category: "Software",
-    title: "Business Management Software",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    category: "Corporate",
+    title: "WASH_E LAUNDRY",
+    image: "/portfolio/WASH_E.jpg",
+    link: "https://www.washelaundry.in/",
     icon: MonitorCog,
     description:
-      "Enterprise software for business automation and productivity.",
-    tech: ["React", "Laravel", "MySQL"],
+      "Wash-E Laundry takes it off your hands from hotel linen and hostel bedding to corporate uniforms and university wear.",
+    tech: ["React", "Corporate", "Responsive"],
   },
 
-  {
-    id: 9,
-    category: "UI UX",
-    title: "Mobile App UI UX",
-    image:
-      "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=1200&q=80",
-    icon: LayoutDashboard,
-    description:
-      "Beautiful mobile application interface design.",
-    tech: ["Figma", "Adobe XD"],
-  },
-
-  {
-    id: 10,
-    category: "UI UX",
-    title: "Dashboard Design",
-    image:
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&q=80",
-    icon: LayoutDashboard,
-    description:
-      "Modern analytics dashboard and CRM interface.",
-    tech: ["Figma", "Illustrator"],
-  },
-
-  {
-    id: 11,
-    category: "Ecommerce",
-    title: "Online Marketplace",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
-    icon: ShoppingBag,
-    description:
-      "Scalable marketplace with secure checkout and vendor management.",
-    tech: ["React", "Laravel", "Stripe"],
-  },
-
-  {
-    id: 12,
-    category: "Software",
-    title: "Custom Enterprise Solution",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
-    icon: MonitorCog,
-    description:
-      "Enterprise grade software tailored for business workflow automation.",
-    tech: ["React", "Spring Boot", "PostgreSQL"],
-  },
+  // {
+  //   id: 7,
+  //   category: "Healthcare",
+  //   title: "IDTL",
+  //   image: "/portfolio/idtl.webp",
+  //   link: "https://theidtl.com/",
+  //   icon: MonitorCog,
+  //   description:
+  //     "NABL accredited laboratory website providing diagnostic testing and healthcare services.",
+  //   tech: ["React", "Healthcare", "Responsive"],
+  // },
 ];
 
 function PortfolioSection() {
@@ -176,8 +140,8 @@ function PortfolioSection() {
     active === "All"
       ? portfolio
       : portfolio.filter(
-          (item) => item.category === active
-        );
+        (item) => item.category === active
+      );
 
   return (
 
@@ -227,19 +191,20 @@ function PortfolioSection() {
         </div>
 
         <div className="portfolio-grid">
-                      {projects.map((project) => {
-
+          {projects.map((project) => {
             const Icon = project.icon;
 
             return (
-
-              <div
+              <article
                 className="portfolio-card"
                 key={project.id}
               >
-
-                <div className="portfolio-image">
-
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="portfolio-image"
+                >
                   <img
                     src={project.image}
                     alt={project.title}
@@ -248,44 +213,39 @@ function PortfolioSection() {
 
                   <div className="portfolio-overlay">
 
-                    <button className="view-btn">
+                    <div className="portfolio-badge">
+                      {project.category}
+                    </div>
 
-                      <ArrowUpRight size={22} />
-
-                    </button>
+                    <div className="portfolio-arrow">
+                      <ArrowUpRight size={24} />
+                    </div>
 
                   </div>
-
-                </div>
+                </a>
 
                 <div className="portfolio-content">
 
-                  <div className="portfolio-top">
+                  <div className="portfolio-header">
 
                     <div className="portfolio-icon">
-
                       <Icon size={22} />
+                    </div>
+
+                    <div>
+
+                      <h3>{project.title}</h3>
+
+                      <span>
+                        {project.category}
+                      </span>
 
                     </div>
 
-                    <span className="portfolio-category">
-
-                      {project.category}
-
-                    </span>
-
                   </div>
 
-                  <h3>
-
-                    {project.title}
-
-                  </h3>
-
-                  <p>
-
+                  <p className="portfolio-description">
                     {project.description}
-
                   </p>
 
                   <div className="portfolio-tech">
@@ -303,12 +263,22 @@ function PortfolioSection() {
 
                   </div>
 
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="visit-btn"
+
+                  >
+                    Visit Website
+
+                    <ArrowUpRight size={18} />
+
+                  </a>
+
                 </div>
-
-              </div>
-
+              </article>
             );
-
           })}
 
           {projects.length === 0 && (
@@ -324,27 +294,47 @@ function PortfolioSection() {
             </div>
 
           )}
-
         </div>
 
         <div className="portfolio-bottom">
 
           <h3>
-            Have a Project in Mind?
+            Explore Our Portfolio
           </h3>
 
           <p>
-            Whether you need a website, mobile
-            application, ecommerce platform or
-            enterprise software, our team is ready
-            to bring your vision to life.
+            Discover our latest projects, innovative solutions,
+            and digital experiences crafted for businesses across industries.
           </p>
 
-          <button className="portfolio-btn">
+          <a
+            href="https://appebsoft.com/wp-content/uploads/2026/03/Portfolio-of-Appebsoft.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="portfolio-btn"
+            download
+          >
 
-            Start Your Project
+            <span>
+              Download Portfolio
+            </span>
 
-          </button>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+
+          </a>
 
         </div>
 

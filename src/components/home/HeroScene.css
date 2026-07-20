@@ -28,45 +28,47 @@
 }
 
 .hero-content h1 {
-  font-size: clamp(5rem, 10vw, 10rem);
+  font-size: clamp(4rem, 7vw, 6.8rem);
 
-  color: white;
+  line-height: .88;
 
-  line-height: .9;
+  margin-top: 14px;
 
-  margin-top: 20px;
+  color: #fff;
 }
 
 .changing-text {
-  font-size: clamp(4rem, 8vw, 8rem);
+  font-size: clamp(3rem, 5.8vw, 5.5rem);
 
   color: #62bdec;
 
   font-weight: 700;
 
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 
 .hero-content p {
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 
-  font-size: 1.2rem;
+  max-width: 560px;
 
-  max-width: 600px;
+  font-size: 1.05rem;
 
-  line-height: 1.8;
+  line-height: 1.7;
+
+  margin-top: 0;
 }
 
 .hero-buttons {
   display: flex;
 
-  gap: 20px;
+  gap: 18px;
 
-  margin-top: 40px;
+  margin-top: 28px;
 }
 
 .primary-btn1 {
-  padding: 18px 35px;
+  padding: 15px 28px;
 
   border: none;
 
@@ -77,12 +79,14 @@
   border-radius: 100px;
 
   cursor: pointer;
+
+  font-size: 15px;
 }
 
 .secondary-btn {
-  padding: 18px 35px;
+  padding: 15px 28px;
 
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(255, 255, 255, .2);
 
   background: transparent;
 
@@ -91,24 +95,26 @@
   border-radius: 100px;
 
   cursor: pointer;
+
+  font-size: 15px;
 }
 
 .hero-stats {
-  display: flex;
+    display:flex;
 
-  gap: 60px;
+    gap:45px;
 
-  margin-top: 80px;
+    margin-top:45px;
 }
 
 .hero-stats h3 {
   color: white;
 
-  font-size: 2rem;
+    font-size:1.7rem;
 }
 
 .hero-stats span {
-  color: rgba(255,255,255,.6);
+  color: rgba(255, 255, 255, .6);
 }
 
 .blob {
@@ -149,9 +155,9 @@
 
   backdrop-filter: blur(20px);
 
-  background: rgba(255,255,255,.06);
+  background: rgba(255, 255, 255, .06);
 
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255, 255, 255, .08);
 
   color: white;
 
@@ -184,7 +190,7 @@
 
   transform: translateX(-50%);
 
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
 
   letter-spacing: 4px;
 

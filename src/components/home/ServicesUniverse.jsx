@@ -5,7 +5,7 @@ import "./ServicesUniverse.css";
 const services = [
   "Web Development",
   "Mobile Apps",
-  "UI UX Design",
+  "UI/UX Design",
   "Digital Marketing",
   "SEO Optimization",
   "Brand Identity",

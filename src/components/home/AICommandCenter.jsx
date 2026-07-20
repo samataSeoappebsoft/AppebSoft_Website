@@ -188,10 +188,10 @@ function AICommandCenter() {
       </div>
 
       <div className="ai-bottom">
-        <h3>
+        {/* <h3>
           Your Business Is
           AI Enabled
-        </h3>
+        </h3> */}
 
         <button>
           START YOUR AI JOURNEY →

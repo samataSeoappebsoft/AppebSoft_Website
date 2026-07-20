@@ -90,6 +90,14 @@
 .node-10 { top: 80%; left: 35%; }
 .node-11 { top: 85%; right: 30%; }
 
+@media (hover: none), (pointer: coarse) {
+
+  .tech-canvas{
+    display: none;
+  }
+
+}
+
 /* =====================================
    TABLET
 ===================================== */

@@ -21,7 +21,7 @@ const services = [
   },
   {
     number: "03",
-    title: "UI UX Design",
+    title: "UI/UX Design",
     description:
       "Beautiful interfaces designed to engage and convert users.",
   },

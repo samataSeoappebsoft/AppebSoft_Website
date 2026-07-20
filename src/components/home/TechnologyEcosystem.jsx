@@ -19,57 +19,66 @@ const techs = [
 function TechnologyEcosystem() {
   const canvasRef = useRef(null);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
+useEffect(() => {
+  const isTouchDevice =
+    window.matchMedia("(pointer: coarse)").matches ||
+    "ontouchstart" in window;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
+  // Disable canvas animation on mobile and tablets
+  if (isTouchDevice) {
+    return;
+  }
 
-    resize();
-    window.addEventListener("resize", resize);
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
 
-    let last = null;
+  const resize = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
 
-    const drawLine = (x1, y1, x2, y2) => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  resize();
+  window.addEventListener("resize", resize);
 
-      ctx.strokeStyle = "#62bdec";
-      ctx.lineWidth = 2;
+  let last = null;
 
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.stroke();
-    };
+  const drawLine = (x1, y1, x2, y2) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const onMove = (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
+    ctx.strokeStyle = "#62bdec";
+    ctx.lineWidth = 2;
 
-      if (last) {
-        drawLine(last.x, last.y, x, y);
-      }
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+  };
 
-      last = { x, y };
-    };
+  const onMove = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
 
-    const onLeave = () => {
-      last = null;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    };
+    if (last) {
+      drawLine(last.x, last.y, x, y);
+    }
 
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseleave", onLeave);
+    last = { x, y };
+  };
 
-    return () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseleave", onLeave);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+  const onLeave = () => {
+    last = null;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  };
+
+  window.addEventListener("mousemove", onMove);
+  window.addEventListener("mouseleave", onLeave);
+
+  return () => {
+    window.removeEventListener("mousemove", onMove);
+    window.removeEventListener("mouseleave", onLeave);
+    window.removeEventListener("resize", resize);
+  };
+}, []);
 
   return (
     <section className="tech-section">

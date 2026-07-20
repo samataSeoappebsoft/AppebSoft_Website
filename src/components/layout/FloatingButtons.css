@@ -1,133 +1,176 @@
+/* ==========================================
+   FLOATING BUTTONS
+========================================== */
+
 .whatsapp-btn,
 .top-btn{
 
-  position:fixed;
+    position: fixed;
 
-  width:60px;
-  height:60px;
+    right: 24px;
 
-  border:none;
+    width: 52px;
+    height: 52px;
 
-  border-radius:50%;
+    border: none;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    border-radius: 50%;
 
-  cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  z-index:9999;
+    cursor: pointer;
 
-  transition:.35s ease;
+    text-decoration: none;
 
-  box-shadow:0 15px 35px rgba(0,0,0,.25);
+    z-index: 9999;
 
+    transition: all .35s ease;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
 }
 
-/* WhatsApp */
+/* ==========================================
+   WHATSAPP BUTTON
+========================================== */
 
 .whatsapp-btn{
 
-  left:25px;
+    bottom: 90px;
 
-  bottom:25px;
+    background: #25D366;
 
-  background:#25D366;
+    color: #ffffff;
 
-  color:#fff;
-
-  font-size:30px;
-
-  text-decoration:none;
-
+    font-size: 24px;
 }
 
 .whatsapp-btn:hover{
 
-  transform:translateY(-6px) scale(1.08);
+    transform: translateY(-5px) scale(1.08);
 
-  box-shadow:0 20px 45px rgba(37,211,102,.45);
-
+    box-shadow: 0 18px 35px rgba(37,211,102,.45);
 }
 
-/* Scroll Button */
+/* ==========================================
+   SCROLL TO TOP BUTTON
+========================================== */
 
 .top-btn{
 
-  right:25px;
+    bottom: 24px;
 
-  bottom:25px;
+    background: #62BDEC;
 
-  background:#62bdec;
+    color: #ffffff;
 
-  color:#fff;
+    font-size: 22px;
 
-  font-size:28px;
+    opacity: 0;
 
-  opacity:0;
+    visibility: hidden;
 
-  visibility:hidden;
-
-  transform:translateY(20px);
-
+    transform: translateY(20px);
 }
 
 .top-btn.show{
 
-  opacity:1;
+    opacity: 1;
 
-  visibility:visible;
+    visibility: visible;
 
-  transform:translateY(0);
-
+    transform: translateY(0);
 }
 
 .top-btn:hover{
 
-  transform:translateY(-6px);
+    transform: translateY(-5px);
 
-  background:#4aa9dc;
+    background: #4AA9DC;
 
+    box-shadow: 0 18px 35px rgba(98,189,236,.4);
 }
+
+/* ==========================================
+   ICON SIZE
+========================================== */
+
+.whatsapp-btn svg,
+.top-btn svg{
+
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
 
 @media (max-width:768px){
 
-  .whatsapp-btn,
-  .top-btn{
+    .whatsapp-btn,
+    .top-btn{
 
-    width:52px;
-    height:52px;
+        width: 46px;
+        height: 46px;
 
-    font-size:24px;
+        right: 18px;
+    }
 
-    bottom:18px;
+    .whatsapp-btn{
 
-  }
+        bottom: 74px;
 
-  .whatsapp-btn{
+        font-size: 21px;
+    }
 
-    left:18px;
+    .top-btn{
 
-  }
+        bottom: 18px;
 
-  .top-btn{
+        font-size: 20px;
+    }
 
-    right:18px;
+    .whatsapp-btn svg,
+    .top-btn svg{
 
-  }
+        width: 20px;
+        height: 20px;
+    }
 
 }
 
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width:480px){
 
-  .whatsapp-btn,
-  .top-btn{
+    .whatsapp-btn,
+    .top-btn{
 
-    width:48px;
-    height:48px;
+        width: 42px;
+        height: 42px;
 
-    font-size:22px;
+        right: 15px;
+    }
 
-  }
+    .whatsapp-btn{
+
+        bottom: 68px;
+    }
+
+    .top-btn{
+
+        bottom: 15px;
+    }
+
+    .whatsapp-btn svg,
+    .top-btn svg{
+
+        width: 18px;
+        height: 18px;
+    }
 
 }

@@ -6,7 +6,7 @@ const items = [
     desc: "We define clear product roadmaps and business aligned digital strategies.",
   },
   {
-    title: "UI UX Design",
+    title: "UI/UX Design",
     desc: "Award focused design systems with clean and modern interfaces.",
   },
   {

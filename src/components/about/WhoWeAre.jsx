@@ -19,99 +19,169 @@ export default function WhoWeAre() {
 
 useEffect(() => {
 
-  const ctx = gsap.context(() => {
+  const texts = gsap.utils.toArray(".who-line");
 
-    const texts = gsap.utils.toArray(".who-line");
+  gsap.set(texts, {
+    opacity: 0,
+    y: 120,
+    filter: "blur(8px)"
+  });
 
-    gsap.set(texts, {
-      opacity: 0,
-      y: 150,
-      filter: "blur(8px)"
-    });
+  gsap.set(texts[0], {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)"
+  });
 
-    gsap.set(texts[0], {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)"
-    });
+  gsap.set(".who-card", {
+    opacity: 0,
+    y: 120
+  });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=7000",
-        pin: true,
-        scrub: 2,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
-    });
+  let current = 0;
+  let locked = false;
 
-    texts.forEach((text, index) => {
+  ScrollTrigger.create({
+    trigger: sectionRef.current,
+    start: "top top",
+    end: "+=4000",
+    pin: true
+  });
 
-      if (index === 0) return;
+  const wheelHandler = (e) => {
 
-      tl.to(texts[index - 1], {
-        opacity: 0,
-        y: -180,
-        filter: "blur(12px)",
-        duration: 1.4,
-        ease: "power3.inOut"
-      });
+    if (locked) return;
 
-      tl.fromTo(
-        text,
-        {
+    const rect = sectionRef.current.getBoundingClientRect();
+
+    if (rect.top > 5 || rect.bottom < window.innerHeight - 5) return;
+
+    if (e.deltaY > 0) {
+
+      if (current < texts.length - 1) {
+
+        locked = true;
+
+        gsap.to(texts[current], {
           opacity: 0,
-          y: 180,
-          filter: "blur(12px)"
-        },
-        {
+          y: -120,
+          filter: "blur(8px)",
+          duration: 0.5
+        });
+
+        current++;
+
+        gsap.fromTo(
+          texts[current],
+          {
+            opacity: 0,
+            y: 120,
+            filter: "blur(8px)"
+          },
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.5
+          }
+        );
+
+        setTimeout(() => {
+          locked = false;
+        }, 600);
+
+      } else {
+
+        locked = true;
+
+        gsap.to(texts[current], {
+          opacity: 0,
+          y: -120,
+          duration: 0.5
+        });
+
+        gsap.to(".who-card", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8
+        });
+
+        setTimeout(() => {
+          locked = false;
+        }, 800);
+
+      }
+
+    }
+
+    if (e.deltaY < 0) {
+
+      if (gsap.getProperty(".who-card", "opacity") > 0.5) {
+
+        locked = true;
+
+        gsap.to(".who-card", {
+          opacity: 0,
+          y: 120,
+          duration: 0.5
+        });
+
+        gsap.to(texts[current], {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
-          duration: 1.4,
-          ease: "power4.out"
-        },
-        ">"
-      );
+          duration: 0.5
+        });
 
-      // Hold the text on screen
-      tl.to({}, { duration: 0.8 });
+        setTimeout(() => {
+          locked = false;
+        }, 600);
 
-    });
+        return;
 
-    // Hide the final text
-    tl.to(texts[texts.length - 1], {
-      opacity: 0,
-      y: -180,
-      filter: "blur(12px)",
-      duration: 1.2,
-      ease: "power3.inOut"
-    });
-
-    // Reveal the card
-    tl.to(".who-card", {
-      opacity: 1,
-      y: 0,
-      duration: 1.5,
-      ease: "power4.out"
-    });
-
-    gsap.to(".bg-word", {
-      x: 200,
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
       }
-    });
 
-  }, sectionRef);
+      if (current > 0) {
 
-  return () => ctx.revert();
+        locked = true;
+
+        gsap.to(texts[current], {
+          opacity: 0,
+          y: 120,
+          filter: "blur(8px)",
+          duration: 0.5
+        });
+
+        current--;
+
+        gsap.to(texts[current], {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 0.5
+        });
+
+        setTimeout(() => {
+          locked = false;
+        }, 600);
+
+      }
+
+    }
+
+  };
+
+  window.addEventListener("wheel", wheelHandler, {
+    passive: true
+  });
+
+  return () => {
+
+    window.removeEventListener("wheel", wheelHandler);
+
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  };
 
 }, []);
 

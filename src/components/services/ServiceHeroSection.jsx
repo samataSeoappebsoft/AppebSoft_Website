@@ -11,9 +11,8 @@ const words = [
   "WEB DEVELOPMENT",
   "MOBILE APPS",
   "SOFTWARE SOLUTIONS",
-  "UI UX DESIGN",
+  "UI/UX DESIGN",
   "ECOMMERCE PLATFORMS",
-  "DIGITAL TRANSFORMATION",
 ];
 
 const serviceCards = [
@@ -360,11 +359,7 @@ function ServiceHero() {
         <p className="service-description">
           AppeeSoft delivers modern digital solutions
           that help startups, SMEs and enterprises
-          accelerate growth. From websites and mobile
-          applications to enterprise software,
-          ecommerce platforms and AI powered systems,
-          our team transforms ambitious ideas into
-          scalable digital products.
+          accelerate growth. 
         </p>
 
         <div className="service-actions">

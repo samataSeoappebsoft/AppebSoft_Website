@@ -6,46 +6,46 @@ import "./HeroScene.css";
 function HeroScene() {
   const changingWord = useRef(null);
 
-  // useEffect(() => {
-  //   const words = [
-  //     "DIGITAL PRODUCTS",
-  //     "MOBILE APPS",
-  //     "AI SOLUTIONS",
-  //     "SAAS PLATFORMS",
-  //     "ENTERPRISE SOFTWARE",
-  //   ];
+  useEffect(() => {
+    const words = [
+      "DIGITAL PRODUCTS",
+      "MOBILE APPS",
+      "AI SOLUTIONS",
+      "SAAS PLATFORMS",
+      "ENTERPRISE SOFTWARE",
+    ];
 
-  //   let index = 0;
+    let index = 0;
 
-  //   const interval = setInterval(() => {
-  //     gsap.to(changingWord.current, {
-  //       y: -40,
-  //       opacity: 0,
-  //       duration: 0.4,
-  //       onComplete: () => {
-  //         index = (index + 1) % words.length;
+    const interval = setInterval(() => {
+      gsap.to(changingWord.current, {
+        y: -40,
+        opacity: 0,
+        duration: 0.4,
+        onComplete: () => {
+          index = (index + 1) % words.length;
 
-  //         changingWord.current.innerText =
-  //           words[index];
+          changingWord.current.innerText =
+            words[index];
 
-  //         gsap.fromTo(
-  //           changingWord.current,
-  //           {
-  //             y: 40,
-  //             opacity: 0,
-  //           },
-  //           {
-  //             y: 0,
-  //             opacity: 1,
-  //             duration: 0.4,
-  //           }
-  //         );
-  //       },
-  //     });
-  //   }, 2500);
+          gsap.fromTo(
+            changingWord.current,
+            {
+              y: 40,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.4,
+            }
+          );
+        },
+      });
+    }, 2500);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="hero-scene">
