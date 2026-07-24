@@ -1,319 +1,713 @@
+/* ==========================================
+   NEXT CHAPTER / CONTACT CTA
+========================================== */
+
+
 .next-chapter {
-  background: #020059;
-  color: #fff;
 
-  position: relative;
-  overflow: hidden;
+    position:relative;
 
-  padding: 180px 8%;
+    overflow:hidden;
+
+    background:#020059;
+
+    color:#ffffff;
+
+    padding:60px 8% 70px;
+
 }
 
-/* background text */
+
+
+/* ==========================================
+   BACKGROUND GLOW
+========================================== */
+
+
+.next-chapter::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:850px;
+
+    height:850px;
+
+    right:-320px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(98,189,236,.12),
+        transparent 70%
+    );
+
+    filter:blur(100px);
+
+}
+
+
+
+.next-chapter::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    left:-180px;
+
+    bottom:-180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(113,40,239,.1),
+        transparent 70%
+    );
+
+    filter:blur(90px);
+
+}
+
+
+
+/* ==========================================
+   BACKGROUND TEXT
+========================================== */
+
 
 .chapter-bg-text {
-  position: absolute;
 
-  top: 120px;
-  right: -80px;
+    position:absolute;
 
-  font-size: 16vw;
+    top:70px;
 
-  font-weight: 900;
+    right:-80px;
 
-  color: rgba(255,255,255,.03);
+    font-size:15vw;
 
-  pointer-events: none;
+    font-weight:900;
 
-  user-select: none;
+    color:rgba(255,255,255,.03);
 
-  white-space: nowrap;
+    user-select:none;
+
+    pointer-events:none;
+
+    white-space:nowrap;
+
 }
 
-/* content */
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
 
 .chapter-content {
-  position: relative;
-  z-index: 2;
+
+    position:relative;
+
+    z-index:2;
+
 }
+
+
 
 .chapter-label {
-  color: #62bdec;
 
-  font-size: 12px;
+    color:#62bdec;
 
-  letter-spacing: 6px;
+    font-size:.75rem;
+
+    font-weight:600;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
 }
 
-/* hero title */
+
+
+/* ==========================================
+   MAIN TITLE
+========================================== */
+
 
 .chapter-title {
-  margin-top: 30px;
 
-  display: flex;
-  flex-direction: column;
+    display:flex;
+
+    flex-direction:column;
+
+    margin-top:20px;
+
 }
+
+
 
 .chapter-title span {
-  font-size: clamp(4rem, 10vw, 10rem);
 
-  line-height: .85;
+    font-size:clamp(3rem,6vw,7rem);
 
-  font-weight: 900;
+    line-height:.9;
 
-  letter-spacing: -4px;
+    font-weight:900;
+
+    letter-spacing:-3px;
+
 }
+
+
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
 
 .chapter-line {
-  margin: 90px 0;
 
-  width: 100%;
-  height: 2px;
+    width:100%;
 
-  background: #62bdec;
+    height:2px;
+
+    margin:45px 0;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #62bdec,
+        rgba(98,189,236,.25)
+    );
+
 }
 
-/* conversation */
+
+
+/* ==========================================
+   CONVERSATION
+========================================== */
+
 
 .chapter-conversation {
-  display: grid;
 
-  grid-template-columns: 0.9fr 1.1fr;
+    display:grid;
 
-  gap: 120px;
+    grid-template-columns:.9fr 1.1fr;
+
+    gap:80px;
+
 }
 
-/* left */
+
+
+/* ==========================================
+   LEFT CONTENT
+========================================== */
+
 
 .conversation-left span {
-  color: #62bdec;
 
-  letter-spacing: 5px;
+    color:#62bdec;
 
-  font-size: 12px;
+    font-size:.75rem;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
 }
+
+
 
 .conversation-left h3 {
-  margin-top: 20px;
 
-  font-size: clamp(3rem, 6vw, 6rem);
+    margin-top:20px;
 
-  line-height: .9;
+    font-size:clamp(2.5rem,4vw,5rem);
+
+    line-height:.95;
+
 }
+
+
 
 .conversation-left p {
-  margin-top: 30px;
 
-  max-width: 500px;
+    margin-top:25px;
 
-  line-height: 1.9;
+    max-width:520px;
 
-  opacity: .75;
+    color:rgba(255,255,255,.72);
+
+    line-height:1.8;
+
 }
 
-/* right */
+
+
+/* ==========================================
+   FORM AREA
+========================================== */
+
 
 .conversation-right {
-  position: relative;
+
+    position:relative;
+
 }
+
+
 
 .form-bg {
-  position: absolute;
 
-  top: -100px;
-  left: -30px;
+    position:absolute;
 
-  font-size: 10rem;
+    top:-60px;
 
-  font-weight: 900;
+    left:-20px;
 
-  color: rgba(255,255,255,.03);
+    font-size:7rem;
 
-  pointer-events: none;
+    font-weight:900;
+
+    color:rgba(255,255,255,.03);
+
+    pointer-events:none;
+
 }
 
-/* form */
+
+
+/* ==========================================
+   FORM
+========================================== */
+
 
 .premium-form {
-  position: relative;
-  z-index: 2;
+
+    position:relative;
+
+    z-index:2;
+
 }
 
+
+
 .input-group {
-  margin-bottom: 40px;
+
+    margin-bottom:28px;
+
 }
+
+
 
 .input-group input,
 .input-group textarea {
-  width: 100%;
 
-  background: transparent;
 
-  border: none;
+    width:100%;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.12);
 
-  padding: 20px 0;
+    padding:16px 0;
 
-  color: white;
 
-  font-size: 1rem;
+    background:transparent;
 
-  outline: none;
 
-  transition: .3s;
+    border:none;
+
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+
+    color:#ffffff;
+
+
+    font-size:1rem;
+
+
+    outline:none;
+
+
+    transition:.35s ease;
+
 }
+
+
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: #62bdec;
+
+    border-color:#62bdec;
+
 }
+
+
 
 .input-group input::placeholder,
 .input-group textarea::placeholder {
-  color: rgba(255,255,255,.4);
+
+    color:rgba(255,255,255,.45);
+
 }
+
+
 
 .input-group textarea {
-  resize: none;
+
+    resize:none;
+
 }
 
-/* pills */
+
+
+/* ==========================================
+   PROJECT TYPES
+========================================== */
+
 
 .project-types {
-  display: flex;
-  flex-wrap: wrap;
 
-  gap: 14px;
+    display:flex;
 
-  margin-bottom: 40px;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
 }
+
+
 
 .type-pill {
-  background:
-    rgba(255,255,255,.04);
 
-  border:
-    1px solid rgba(255,255,255,.08);
+    padding:12px 20px;
 
-  color: white;
+    border-radius:999px;
 
-  padding: 14px 22px;
+    background:rgba(255,255,255,.04);
 
-  border-radius: 999px;
+    border:1px solid rgba(255,255,255,.08);
 
-  cursor: pointer;
+    color:#ffffff;
 
-  transition: .35s ease;
+    cursor:pointer;
+
+    transition:.35s ease;
+
 }
+
+
 
 .type-pill:hover {
-  background: #62bdec;
 
-  border-color: #62bdec;
+    background:#62bdec;
 
-  transform: translateY(-3px);
+    border-color:#62bdec;
+
+    transform:translateY(-3px);
+
 }
 
-/* button */
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
 
 .submit-btn1 {
-  margin-top: 20px;
 
-  background: #7128ef;
 
-  color: white;
+    margin-top:10px;
 
-  border: none;
 
-  border-radius: 999px;
+    padding:17px 38px;
 
-  padding: 22px 40px;
 
-  font-weight: 700;
+    border:none;
 
-  letter-spacing: 2px;
 
-  cursor: pointer;
+    border-radius:999px;
 
-  transition: .35s ease;
+
+    background:#7128ef;
+
+
+    color:white;
+
+
+    font-weight:700;
+
+
+    letter-spacing:2px;
+
+
+    cursor:pointer;
+
+
+    transition:.35s ease;
+
 }
 
-.submit-btn:hover {
-  transform: translateY(-5px);
 
-  box-shadow:
-    0 20px 50px rgba(255,107,61,.25);
+
+.submit-btn1:hover {
+
+
+    transform:translateY(-5px);
+
+
+    background:#62bdec;
+
+
 }
 
-/* orange glow */
 
-.next-chapter::before {
-  content: "";
 
-  position: absolute;
+/* ==========================================
+   TABLET
+========================================== */
 
-  width: 900px;
-  height: 900px;
 
-  border-radius: 50%;
+@media(max-width:1024px){
 
-  background:
-    radial-gradient(
-      rgba(255,107,61,.08),
-      transparent 70%
-    );
 
-  right: -350px;
-  top: 50%;
+.next-chapter{
 
-  transform: translateY(-50%);
+    padding:50px 7% 60px;
+
 }
 
-/* tablet */
 
-@media (max-width: 991px) {
+.chapter-title span{
 
-  .chapter-conversation {
-    grid-template-columns: 1fr;
+    font-size:5rem;
 
-    gap: 70px;
-  }
-
-  .chapter-title span {
-    font-size: 4rem;
-  }
-
-  .conversation-left h3 {
-    font-size: 3rem;
-  }
-
-  .form-bg {
-    font-size: 6rem;
-  }
 }
 
-/* mobile */
 
-@media (max-width: 768px) {
+.chapter-conversation{
 
-  .next-chapter {
-    padding: 120px 24px;
-  }
+    gap:50px;
 
-  .chapter-title span {
-    font-size: 3rem;
-  }
+}
 
-  .conversation-left h3 {
-    font-size: 2.4rem;
-  }
 
-  .submit-btn {
-    width: 100%;
-  }
+}
 
-  .chapter-bg-text {
-    font-size: 24vw;
-  }
+
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.next-chapter{
+
+    padding:45px 6% 45px;
+
+}
+
+
+
+/* remove divider */
+
+.chapter-line{
+
+    display:none;
+
+}
+
+
+
+.chapter-bg-text{
+
+    top:40px;
+
+    right:-30px;
+
+    font-size:25vw;
+
+}
+
+
+
+.chapter-title span{
+
+    font-size:2.7rem;
+
+    line-height:1;
+
+    letter-spacing:-0.5px;
+
+    word-spacing:2px;
+
+}
+
+
+
+.chapter-conversation{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+
+
+.conversation-left h3{
+
+    font-size:2.2rem;
+
+    line-height:1;
+
+}
+
+
+
+.conversation-left p{
+
+    margin-top:18px;
+
+}
+
+
+
+.form-bg{
+
+    top:-30px;
+
+    left:0;
+
+    font-size:4rem;
+
+}
+
+
+
+.project-types{
+
+    gap:8px;
+
+}
+
+
+
+.type-pill{
+
+    padding:10px 16px;
+
+    font-size:.85rem;
+
+}
+
+
+
+.submit-btn1{
+
+    width:100%;
+
+    padding:17px;
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+
+@media(max-width:480px){
+
+
+.next-chapter{
+
+    padding:35px 20px 35px;
+
+}
+
+
+
+.chapter-title span{
+
+    font-size:2.25rem;
+
+    line-height:1.05;
+
+    letter-spacing:0;
+
+    word-spacing:1px;
+
+}
+
+
+
+.conversation-left h3{
+
+    font-size:1.9rem;
+
+    line-height:1.05;
+
+}
+
+
+
+.chapter-label{
+
+    letter-spacing:2px;
+
+}
+
+
+
+.chapter-bg-text{
+
+    font-size:28vw;
+
+}
+
+
+
+.form-bg{
+
+    font-size:3.5rem;
+
+}
+
+
 }

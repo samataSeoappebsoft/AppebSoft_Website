@@ -60,166 +60,187 @@ const services = [
   },
 ];
 
-function ServiceCube() {
+export default function ServiceCube() {
   const sectionRef = useRef(null);
   const cubeRef = useRef(null);
+  const contentRef = useRef(null);
+
+  const rotation = useRef(0);
+  const startX = useRef(0);
+  const dragging = useRef(false);
 
   const [activeFace, setActiveFace] = useState(0);
 
-  const faceRotations = [
-    0,
-    -90,
-    -180,
-    -270,
-  ];
+  const faceRotations = [0, -90, -180, -270];
+
+  const animateContent = () => {
+    gsap.fromTo(
+      contentRef.current,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.55,
+        ease: "power3.out",
+        overwrite: "auto",
+      }
+    );
+  };
 
   const rotateCube = (index) => {
+    rotation.current = faceRotations[index];
+
     gsap.to(cubeRef.current, {
-      rotateY: faceRotations[index],
-      duration: 1.2,
+      rotateY: rotation.current,
+      duration: 1,
       ease: "power4.inOut",
     });
 
-    gsap.fromTo(
-      ".content-inner",
-      {
-        opacity: 0,
-        y: 40,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-      }
-    );
-
     setActiveFace(index);
+
+    requestAnimationFrame(() => {
+      animateContent();
+    });
   };
 
   useEffect(() => {
     const cube = cubeRef.current;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-      },
-    });
-
-    tl.from(".cube-wrapper", {
-      y: 200,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power4.out",
-    });
-
-    tl.from(
-      ".content-panel",
-      {
-        x: 100,
-        opacity: 0,
-        duration: 1,
-      },
-      "-=0.8"
-    );
-
-    let isDragging = false;
-    let startX = 0;
-    let currentRotation = 0;
-
-    const onMouseDown = (e) => {
-      isDragging = true;
-      startX = e.clientX;
-    };
-
-    const onMouseMove = (e) => {
-      if (!isDragging) return;
-
-      const delta = e.clientX - startX;
-
-      currentRotation += delta * 0.5;
-
+    const ctx = gsap.context(() => {
       gsap.set(cube, {
-        rotateY: currentRotation,
+        rotateX: -18,
+        rotateY: 0,
+        transformPerspective: 1200,
+        transformStyle: "preserve-3d",
       });
 
-      startX = e.clientX;
-    };
+      gsap.set(contentRef.current, {
+        opacity: 1,
+        y: 0,
+      });
 
-    const onMouseUp = () => {
-      if (!isDragging) return;
+      const tl = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
 
-      isDragging = false;
+      tl.from(".cube-wrapper", {
+        opacity: 0,
+        y: 120,
+        duration: 1,
+      });
 
-      const snapPoints = [
-        0,
-        -90,
-        -180,
-        -270,
-      ];
+      tl.from(
+        ".content-panel",
+        {
+          opacity: 0,
+          x: 80,
+          duration: 0.8,
+        },
+        "-=0.5"
+      );
 
-      let closest = 0;
-      let smallest = Infinity;
+      const getX = (event) =>
+        event.touches ? event.touches[0].clientX : event.clientX;
 
-      snapPoints.forEach(
-        (angle, index) => {
-          const distance = Math.abs(
-            currentRotation - angle
-          );
+      const startDrag = (event) => {
+        dragging.current = true;
+        startX.current = getX(event);
+      };
 
-          if (distance < smallest) {
-            smallest = distance;
+      const moveDrag = (event) => {
+        if (!dragging.current) return;
+
+        const currentX = getX(event);
+
+        const delta = currentX - startX.current;
+
+        rotation.current += delta * 0.45;
+
+        gsap.set(cube, {
+          rotateY: rotation.current,
+        });
+
+        startX.current = currentX;
+      };
+
+      const endDrag = () => {
+        if (!dragging.current) return;
+
+        dragging.current = false;
+
+        const snapAngles = [0, -90, -180, -270];
+
+        let closest = 0;
+        let distance = Infinity;
+
+        snapAngles.forEach((angle, index) => {
+          const diff = Math.abs(rotation.current - angle);
+
+          if (diff < distance) {
+            distance = diff;
             closest = index;
           }
-        }
-      );
+        });
 
-      gsap.to(cube, {
-        rotateY: snapPoints[closest],
-        duration: 0.8,
-        ease: "power3.out",
-      });
+        rotation.current = snapAngles[closest];
 
-      currentRotation =
-        snapPoints[closest];
+        gsap.to(cube, {
+          rotateY: rotation.current,
+          duration: 0.8,
+          ease: "power4.out",
+        });
 
-      setActiveFace(closest);
+        setActiveFace(closest);
+
+        requestAnimationFrame(() => {
+          animateContent();
+        });
+      };
+
+      cube.addEventListener("mousedown", startDrag);
+      cube.addEventListener("touchstart", startDrag, { passive: true });
+
+      window.addEventListener("mousemove", moveDrag);
+      window.addEventListener("touchmove", moveDrag, { passive: true });
+
+      window.addEventListener("mouseup", endDrag);
+      window.addEventListener("touchend", endDrag);
+
+      return () => {
+        cube.removeEventListener("mousedown", startDrag);
+        cube.removeEventListener("touchstart", startDrag);
+
+        window.removeEventListener("mousemove", moveDrag);
+        window.removeEventListener("touchmove", moveDrag);
+
+        window.removeEventListener("mouseup", endDrag);
+        window.removeEventListener("touchend", endDrag);
+      };
+    }, sectionRef);
+
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
     };
 
-    cube.addEventListener(
-      "mousedown",
-      onMouseDown
-    );
-
-    window.addEventListener(
-      "mousemove",
-      onMouseMove
-    );
-
-    window.addEventListener(
-      "mouseup",
-      onMouseUp
-    );
+    window.addEventListener("load", handleLoad);
 
     return () => {
-      cube.removeEventListener(
-        "mousedown",
-        onMouseDown
-      );
-
-      window.removeEventListener(
-        "mousemove",
-        onMouseMove
-      );
-
-      window.removeEventListener(
-        "mouseup",
-        onMouseUp
-      );
+      window.removeEventListener("load", handleLoad);
+      ctx.revert();
     };
   }, []);
 
-  return (
+    return (
     <section
       className="service-cube-section"
       ref={sectionRef}
@@ -229,9 +250,7 @@ function ServiceCube() {
       </div>
 
       <div className="service-header">
-        <span>
-          WHAT WE DO BEST
-        </span>
+        <span>WHAT WE DO BEST</span>
 
         <h2>
           Expertise That
@@ -242,15 +261,15 @@ function ServiceCube() {
 
       <div className="service-layout">
 
-        {/* LEFT SIDE */}
+        {/* ================= LEFT ================= */}
 
         <div className="cube-area">
 
           <div className="cube-wrapper">
 
             <div
-              className="cube"
               ref={cubeRef}
+              className="cube"
             >
               <div className="face front">
                 <span>01</span>
@@ -267,75 +286,67 @@ function ServiceCube() {
               <div className="face left">
                 <span>04</span>
               </div>
+
             </div>
 
           </div>
 
           <div className="cube-navigation">
 
-            {services.map(
-              (service, index) => (
-                <button
-                  key={index}
-                  onClick={() =>
-                    rotateCube(index)
-                  }
-                  className={
-                    activeFace === index
-                      ? "nav-number active"
-                      : "nav-number"
-                  }
-                >
-                  {service.number}
-                </button>
-              )
-            )}
+            {services.map((service, index) => (
+
+              <button
+                key={service.number}
+                className={
+                  activeFace === index
+                    ? "nav-number active"
+                    : "nav-number"
+                }
+                onClick={() => rotateCube(index)}
+              >
+                {service.number}
+              </button>
+
+            ))}
 
           </div>
 
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* ================= RIGHT ================= */}
 
         <div className="content-panel">
 
           <div
+            ref={contentRef}
             key={activeFace}
             className="content-inner"
           >
+
             <div className="content-tag">
               {services[activeFace].number}
             </div>
 
-           <h3 className="service-title">
-  {services[activeFace].title}
-</h3>
+            <h3 className="service-title">
+              {services[activeFace].title}
+            </h3>
 
-            <p>
-              {
-                services[
-                  activeFace
-                ].description
-              }
+            <p className="service-description">
+              {services[activeFace].description}
             </p>
 
             <div className="features-grid">
 
-              {services[
-                activeFace
-              ].features.map(
-                (
-                  feature,
-                  index
-                ) => (
-                  <div
-                    className="feature-card"
-                    key={index}
-                  >
-                    {feature}
-                  </div>
-                )
-              )}
+              {services[activeFace].features.map((feature) => (
+
+                <div
+                  key={feature}
+                  className="feature-card"
+                >
+                  {feature}
+                </div>
+
+              ))}
 
             </div>
 
@@ -344,8 +355,7 @@ function ServiceCube() {
         </div>
 
       </div>
+
     </section>
   );
 }
-
-export default ServiceCube;

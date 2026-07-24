@@ -1,23 +1,82 @@
+import { NavLink } from "react-router-dom";
 import "./MenuOverlay.css";
 
 function MenuOverlay({ isOpen, setIsOpen }) {
+
+  const closeMenu = () => setIsOpen(false);
+
+
   return (
     <div className={`menu-overlay ${isOpen ? "active" : ""}`}>
+
       <button
         className="close-btn"
-        onClick={() => setIsOpen(false)}
+        onClick={closeMenu}
+        aria-label="Close menu"
       >
         ×
       </button>
 
+
       <nav className="overlay-nav">
-        <a href="/">HOME</a>
-        <a href="/about">ABOUT</a>
-        <a href="/services">SERVICES</a>
-        <a href="/portfolio">PORTFOLIO</a>
-        {/* <a href="/blog">BLOG</a> */}
-        <a href="/contact">CONTACT</a>
+
+        <NavLink
+          to="/"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          HOME
+        </NavLink>
+
+
+        <NavLink
+          to="/about"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          ABOUT
+        </NavLink>
+
+
+        <NavLink
+          to="/services"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          SERVICES
+        </NavLink>
+
+
+        <NavLink
+          to="/portfolio"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          PORTFOLIO
+        </NavLink>
+
+
+        <NavLink
+          to="/contact"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          CONTACT
+        </NavLink>
+
+
       </nav>
+
     </div>
   );
 }

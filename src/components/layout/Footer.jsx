@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -46,17 +47,18 @@ function Footer() {
 
       </div>
 
-      <div className="footer-bottom">
+  <div className="footer-bottom">
+  <span>
+    © 2026{" "}
+    <Link to="/" className="footer-brand">
+      AppebSoft
+    </Link>
+  </span>
 
-        <span>
-          © 2026 AppebSoft
-        </span>
-
-        <span>
-          Made In India · Built Worldwide
-        </span>
-
-      </div>
+  <span>
+    Made In India • Built Worldwide
+  </span>
+</div>
 
     </footer>
   );

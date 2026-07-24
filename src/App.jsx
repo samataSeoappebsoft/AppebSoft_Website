@@ -1,13 +1,37 @@
+import { useState } from "react";
+
 import AppRoutes from "./routes/AppRoutes";
-// import Cursor from "./components/layout/Cursor";
-// import Loader from "./components/layout/Loader";
+
+import Loader from "./components/layout/Loader";
+
 
 function App() {
+
+
+  const [loading,setLoading] = useState(true);
+
+
+
   return (
+
     <>
+
+      {
+        loading &&
+        <Loader
+          finishLoading={()=>setLoading(false)}
+        />
+      }
+
+
       <AppRoutes />
+
+
     </>
+
   );
+
 }
+
 
 export default App;

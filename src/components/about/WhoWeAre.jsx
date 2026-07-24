@@ -14,308 +14,180 @@ const lines = [
 ];
 
 export default function WhoWeAre() {
-
-    const sectionRef = useRef();
+  const sectionRef = useRef(null);
+  const contentRef = useRef(null);
 
 useEffect(() => {
+  const ctx = gsap.context(() => {
+    const texts = gsap.utils.toArray(".who-line");
 
-  const texts = gsap.utils.toArray(".who-line");
+    gsap.set(texts, {
+      opacity: 0,
+      y: 100,
+      scale: 0.96,
+    });
 
-  gsap.set(texts, {
-    opacity: 0,
-    y: 120,
-    filter: "blur(8px)"
-  });
+    gsap.set(texts[0], {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+    });
 
-  gsap.set(texts[0], {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)"
-  });
+    gsap.set(".who-card", {
+      opacity: 1,
+      y: 100,
+    });
 
-  gsap.set(".who-card", {
-    opacity: 0,
-    y: 120
-  });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        pin: contentRef.current,
+        start: "top top",
+        end: () =>
+          `+=${texts.length * window.innerHeight * 0.8}`,
+        scrub: 0.6,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      },
+    });
 
-  let current = 0;
-  let locked = false;
+    /* Hold first text */
+    tl.to({}, { duration: 0.45 });
 
-  ScrollTrigger.create({
-    trigger: sectionRef.current,
-    start: "top top",
-    end: "+=4000",
-    pin: true
-  });
+    texts.forEach((text, index) => {
+      if (index === 0) return;
 
-  const wheelHandler = (e) => {
-
-    if (locked) return;
-
-    const rect = sectionRef.current.getBoundingClientRect();
-
-    if (rect.top > 5 || rect.bottom < window.innerHeight - 5) return;
-
-    if (e.deltaY > 0) {
-
-      if (current < texts.length - 1) {
-
-        locked = true;
-
-        gsap.to(texts[current], {
+      tl.to(
+        texts[index - 1],
+        {
           opacity: 0,
-          y: -120,
-          filter: "blur(8px)",
-          duration: 0.5
-        });
+          y: -80,
+          scale: 1.02,
+          duration: 0.55,
+          ease: "power2.out",
+        }
+      );
 
-        current++;
-
-        gsap.fromTo(
-          texts[current],
-          {
-            opacity: 0,
-            y: 120,
-            filter: "blur(8px)"
-          },
-          {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            duration: 0.5
-          }
-        );
-
-        setTimeout(() => {
-          locked = false;
-        }, 600);
-
-      } else {
-
-        locked = true;
-
-        gsap.to(texts[current], {
+      tl.fromTo(
+        text,
+        {
           opacity: 0,
-          y: -120,
-          duration: 0.5
-        });
-
-        gsap.to(".who-card", {
+          y: 80,
+          scale: 0.96,
+        },
+        {
           opacity: 1,
           y: 0,
-          duration: 0.8
-        });
+          scale: 1,
+          duration: 0.55,
+          ease: "power2.out",
+        },
+        "<"
+      );
+    });
 
-        setTimeout(() => {
-          locked = false;
-        }, 800);
+    /* Hold the final text */
+    tl.to({}, { duration: 0.3 });
 
-      }
+    /* Slide the card in while keeping opacity at 1 */
+    tl.to(
+      ".who-card",
+      {
+        y: 0,
+        duration: 0.45,
+        ease: "power3.out",
+      },
+      "<"
+    );
 
-    }
+    /* Hold everything */
+    tl.to({}, { duration: 1.2 });
 
-    if (e.deltaY < 0) {
-
-      if (gsap.getProperty(".who-card", "opacity") > 0.5) {
-
-        locked = true;
-
-        gsap.to(".who-card", {
-          opacity: 0,
-          y: 120,
-          duration: 0.5
-        });
-
-        gsap.to(texts[current], {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.5
-        });
-
-        setTimeout(() => {
-          locked = false;
-        }, 600);
-
-        return;
-
-      }
-
-      if (current > 0) {
-
-        locked = true;
-
-        gsap.to(texts[current], {
-          opacity: 0,
-          y: 120,
-          filter: "blur(8px)",
-          duration: 0.5
-        });
-
-        current--;
-
-        gsap.to(texts[current], {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.5
-        });
-
-        setTimeout(() => {
-          locked = false;
-        }, 600);
-
-      }
-
-    }
-
-  };
-
-  window.addEventListener("wheel", wheelHandler, {
-    passive: true
-  });
+    ScrollTrigger.refresh();
+  }, sectionRef);
 
   return () => {
-
-    window.removeEventListener("wheel", wheelHandler);
-
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
+    ctx.revert();
   };
-
 }, []);
 
-return (
-
+    return (
     <section
-        className="whoSection"
-        ref={sectionRef}
+      className="whoSection"
+      ref={sectionRef}
     >
-
+      <div
+        className="content"
+        ref={contentRef}
+      >
         <div className="bg-word">
+          APPEESOFT
+        </div>
 
-            APPEESOFT
+        <div className="smallTitle">
+          WHO WE ARE
+        </div>
+
+        <div className="story">
+          {lines.map((line, index) => (
+            <h2
+              key={index}
+              className="who-line"
+            >
+              {line}
+            </h2>
+          ))}
+        </div>
+
+        <div className="who-card">
+
+          <h3>
+            Building The Digital Future.
+          </h3>
+
+          <p>
+            AppeeSoft is a digital transformation company helping startups,
+            brands and enterprises build modern digital experiences through
+            strategy, design, engineering and innovation.
+
+            We create websites, mobile applications,
+            enterprise software, AI powered solutions,
+            cloud platforms and digital marketing strategies
+            that help businesses grow with confidence.
+          </p>
+
+          <div className="divider" />
+
+          <div className="stats">
+
+            <div>
+              <h4>500+</h4>
+              <span>Projects</span>
+            </div>
+
+            <div>
+              <h4>150+</h4>
+              <span>Clients</span>
+            </div>
+
+            <div>
+              <h4>20+</h4>
+              <span>Experts</span>
+            </div>
+
+            <div>
+              <h4>98%</h4>
+              <span>Satisfaction</span>
+            </div>
+
+          </div>
 
         </div>
 
-        {/* <div className="floating react">
-React
-</div>
-
-<div className="floating next">
-Next.js
-</div>
-
-<div className="floating node">
-Node
-</div>
-
-<div className="floating ai">
-AI
-</div>
-
-<div className="floating cloud">
-Cloud
-</div>
-
-<div className="floating seo">
-SEO
-</div> */}
-
-        <div className="content">
-
-            <div className="smallTitle">
-
-                WHO WE ARE
-
-            </div>
-
-            <div className="story">
-
-                {
-                    lines.map((line, index) => (
-
-                        <h2
-                            className="who-line"
-                            key={index}
-                        >
-
-                            {line}
-
-                        </h2>
-
-                    ))
-                }
-
-            </div>
-
-            <div className="who-card">
-
-                <h3>
-
-                    Building The Digital Future.
-
-                </h3>
-
-                <p>
-
-                    AppeeSoft is a digital transformation company
-                    helping startups, brands and enterprises build
-                    modern digital experiences through strategy,
-                    design, engineering and innovation.
-
-                    We create websites, mobile applications,
-                    enterprise software, AI powered solutions,
-                    cloud platforms and digital marketing
-                    strategies that help businesses grow with
-                    confidence.
-
-                </p>
-
-                <div className="divider" />
-
-                <div className="stats">
-
-                    <div>
-
-                        <h4>500+</h4>
-
-                        <span>Projects</span>
-
-                    </div>
-
-                    <div>
-
-                        <h4>150+</h4>
-
-                        <span>Clients</span>
-
-                    </div>
-
-                    <div>
-
-                        <h4>20+</h4>
-
-                        <span>Experts</span>
-
-                    </div>
-
-                    <div>
-
-                        <h4>98%</h4>
-
-                        <span>Satisfaction</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </section>
-
-);
+  );
 
 }

@@ -1,55 +1,111 @@
+/* ==========================================
+   MANIFESTO SECTION
+========================================== */
+
 .manifesto-section {
-  min-height: 100vh;
-
-  background: #020059;
-
   position: relative;
-
+  width: 100%;
+  height: 500vh;
+  background: #020059;
   overflow: hidden;
+}
+
+/* ==========================================
+   PINNED AREA
+========================================== */
+
+.manifesto-inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 
   display: flex;
-
   justify-content: center;
   align-items: center;
+
+  overflow: hidden;
+  background: #020059;
 }
+.smallTitle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    border-radius: 100px;
+    background: rgba(113, 40, 239, .15);
+    border: 1px solid rgba(113, 40, 239, .35);
+    color: #62bdec;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 20px;}
+/* ==========================================
+   BACKGROUND WORD
+========================================== */
 
 .bg-word {
   position: absolute;
 
-  font-size: 24vw;
+  top: 50%;
+  left: 50%;
 
+  transform: translate(-50%, -50%);
+
+  font-size: clamp(10rem, 22vw, 26rem);
   font-weight: 900;
+  line-height: 1;
 
-  color: rgb(255, 255, 255);
+  color: rgba(255,255,255,.035);
 
   white-space: nowrap;
 
+  user-select: none;
   pointer-events: none;
 
-  animation: floatWord 15s linear infinite alternate;
+  animation: floatWord 16s ease-in-out infinite alternate;
 }
 
 @keyframes floatWord {
+
   from {
-    transform: translateX(-5%);
+    transform: translate(-52%, -50%);
   }
 
   to {
-    transform: translateX(5%);
+    transform: translate(-48%, -50%);
   }
+
 }
 
+/* ==========================================
+   PHRASE WRAPPER
+========================================== */
+
 .phrase-container {
+
   position: relative;
-  width: 100%;
-  height: 220px;
+
+  width: min(1400px, 100%);
+
+  min-height: 280px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 0 6%;
+
+  z-index: 5;
+
 }
 
+/* ==========================================
+   PHRASES
+========================================== */
+
 .phrase {
+
   position: absolute;
   inset: 0;
 
@@ -59,106 +115,239 @@
 
   text-align: center;
 
-  width: 100%;
-
-  text-align: center;
-
-  font-size: clamp(3rem, 8vw, 8rem);
-
-  font-weight: 800;
-
-  line-height: 0.95;
-
   color: #ffffff;
 
-  padding: 0 5%;
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -2px;
+
+  padding: 0 20px;
 
   will-change: transform, opacity;
 
-  transform-origin: center center;
 }
 
-/* ===========================
+/* ==========================================
+   LARGE DESKTOP
+========================================== */
+
+@media (max-width:1600px){
+
+.manifesto-section{
+
+height:480vh;
+
+}
+
+}
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media (max-width:1400px){
+
+.manifesto-section{
+
+height:450vh;
+
+}
+
+.bg-word{
+
+font-size:24vw;
+
+}
+
+.phrase{
+
+font-size:clamp(3rem,6.5vw,6rem);
+
+}
+
+}
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media (max-width:1200px){
+
+.manifesto-section{
+
+height:430vh;
+
+}
+
+.bg-word{
+
+font-size:28vw;
+
+}
+
+.phrase-container{
+
+min-height:240px;
+
+padding:0 5%;
+
+}
+
+.phrase{
+
+font-size:clamp(2.8rem,6vw,5rem);
+
+}
+
+}
+
+/* ==========================================
    TABLET
-=========================== */
+========================================== */
 
-@media screen and (max-width: 991px) {
+@media (max-width:991px){
 
-  .manifesto-section {
-    min-height: 80vh;
-    padding: 100px 40px;
-  }
+.manifesto-section{
 
-  .bg-word {
-    font-size: 30vw;
-    opacity: 0.8;
-  }
-
-  .phrase-container {
-    height: 240px;
-  }
-
-  .phrase {
-    font-size: clamp(2.8rem, 8vw, 5rem);
-    line-height: 1.05;
-    padding: 0 8%;
-  }
+height:400vh;
 
 }
 
+.manifesto-inner{
 
-/* ===========================
+height:100vh;
+
+}
+
+.bg-word{
+
+font-size:34vw;
+
+}
+
+.phrase-container{
+
+min-height:220px;
+
+padding:0 40px;
+
+}
+
+.phrase{
+
+font-size:clamp(2.3rem,6vw,4rem);
+
+line-height:1.05;
+
+}
+
+}
+
+/* ==========================================
    MOBILE
-=========================== */
+========================================== */
 
-@media screen and (max-width: 767px) {
+@media (max-width:767px){
 
-  .manifesto-section {
-    min-height: 70vh;
-    padding: 80px 24px;
-  }
+.manifesto-section{
 
-  .bg-word {
-    font-size: 38vw;
-    opacity: 0.6;
-  }
-
-  .phrase-container {
-    height: 200px;
-  }
-
-  .phrase {
-    font-size: clamp(2rem, 9vw, 3.4rem);
-    line-height: 1.15;
-    padding: 0 20px;
-  }
+height:380vh;
 
 }
 
+.manifesto-inner{
 
-/* ===========================
+height:100vh;
+
+}
+
+.bg-word{
+
+font-size:42vw;
+
+}
+
+.phrase-container{
+
+min-height:180px;
+
+padding:0 24px;
+
+}
+
+.phrase{
+
+font-size:clamp(1.8rem,8vw,2.7rem);
+
+line-height:1.15;
+
+letter-spacing:-1px;
+
+padding:0 10px;
+
+}
+
+}
+
+/* ==========================================
    SMALL MOBILE
-=========================== */
+========================================== */
 
-@media screen and (max-width: 480px) {
+@media (max-width:480px){
 
-  .manifesto-section {
-    min-height: 60vh;
-    padding: 70px 20px;
-  }
+.manifesto-section{
 
-  .bg-word {
-    font-size: 45vw;
-  }
+height:360vh;
 
-  .phrase-container {
-    height: 170px;
-  }
+}
 
-  .phrase {
-    font-size: 1.8rem;
-    line-height: 1.2;
-    padding: 0 10px;
-  }
+.bg-word{
+
+font-size:48vw;
+
+}
+
+.phrase-container{
+
+min-height:150px;
+
+padding:0 18px;
+
+}
+
+.phrase{
+
+font-size:clamp(1.45rem,8vw,2rem);
+
+line-height:1.2;
+
+}
+
+}
+
+/* ==========================================
+   EXTRA SMALL DEVICES
+========================================== */
+
+@media (max-width:360px){
+
+.manifesto-section{
+
+height:340vh;
+
+}
+
+.bg-word{
+
+font-size:52vw;
+
+}
+
+.phrase{
+
+font-size:1.3rem;
+
+}
 
 }

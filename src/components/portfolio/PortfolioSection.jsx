@@ -5,7 +5,7 @@ import { useState } from "react";
 import {
   ArrowUpRight,
   Globe,
-  Smartphone,
+  // Smartphone,
   ShoppingBag,
   LayoutDashboard,
   MonitorCog,
@@ -17,7 +17,7 @@ const filters = [
   "All",
   "Corporate",
   "Ecommerce",
-  "Healthcare",
+  // "Healthcare",
   "Industrial",
   "Real Estate",
 ];
@@ -25,6 +25,42 @@ const filters = [
 const portfolio = [
   {
     id: 1,
+    category: "Corporate",
+    title: "IDTL",
+    image: "/portfolio/IDTL.jpg",
+    link: "https://theidtl.com/",
+    icon: MonitorCog,
+    description:
+      "NABL accredited laboratory website providing diagnostic testing and healthcare services.",
+    tech: ["Wordpress", "Corporate", "Responsive"],
+  },
+
+  {
+    id: 2,
+    category: "Corporate",
+    title: "WASH_E LAUNDRY",
+    image: "/portfolio/WASH_E.jpg",
+    link: "https://www.washelaundry.in/",
+    icon: MonitorCog,
+    description:
+      "Wash-E Laundry takes it off your hands from hotel linen and hostel bedding to corporate uniforms and university wear.",
+    tech: ["React", "Corporate", "Responsive"],
+  },
+
+  {
+    id: 3,
+    category: "Corporate",
+    title: "MachSG",
+    image: "/portfolio/MACSG.jpg",
+    link: "https://www.machsg.com/",
+    icon: Globe,
+    description:
+      "Corporate engineering and manufacturing website showcasing industrial solutions and global capabilities.",
+    tech: ["Corporate", "Responsive", "SEO"],
+  },
+
+  {
+    id: 4,
     category: "Industrial",
     title: "Piab",
     image: "/portfolio/piab.png",
@@ -32,11 +68,11 @@ const portfolio = [
     icon: Globe,
     description:
       "Corporate industrial website focused on vacuum automation, gripping and lifting solutions.",
-    tech: ["React", "UI/UX", "SEO"],
+    tech: ["Wordpress", "UI/UX", "SEO"],
   },
 
   {
-    id: 2,
+    id: 5,
     category: "Ecommerce",
     title: "Nasty Gal",
     image: "/portfolio/nasty-gal.jpg",
@@ -48,7 +84,7 @@ const portfolio = [
   },
 
   {
-    id: 3,
+    id: 6,
     category: "Ecommerce",
     title: "Suta",
     image: "/portfolio/suta.jpg",
@@ -60,7 +96,7 @@ const portfolio = [
   },
 
   {
-    id: 4,
+    id: 7,
     category: "Corporate",
     title: "Ambey Group",
     image: "/portfolio/ambey-group.jpg",
@@ -72,7 +108,7 @@ const portfolio = [
   },
 
   {
-    id: 5,
+    id: 8,
     category: "Ecommerce",
     title: "House of Indya",
     image: "/portfolio/indya.jpg",
@@ -84,7 +120,7 @@ const portfolio = [
   },
 
   {
-    id: 6,
+    id: 9,
     category: "Real Estate",
     title: "Sobha",
     image: "/portfolio/sobha.jpg",
@@ -94,42 +130,6 @@ const portfolio = [
       "Luxury real estate website showcasing premium residential and commercial properties.",
     tech: ["Corporate", "CMS", "SEO"],
   },
-
-  {
-    id: 7,
-    category: "Corporate",
-    title: "IDTL",
-    image: "/portfolio/IDTL.jpg",
-    link: "https://theidtl.com/",
-    icon: MonitorCog,
-    description:
-      "NABL accredited laboratory website providing diagnostic testing and healthcare services.",
-    tech: ["React", "Corporate", "Responsive"],
-  },
-
-  {
-    id: 8,
-    category: "Corporate",
-    title: "WASH_E LAUNDRY",
-    image: "/portfolio/WASH_E.jpg",
-    link: "https://www.washelaundry.in/",
-    icon: MonitorCog,
-    description:
-      "Wash-E Laundry takes it off your hands from hotel linen and hostel bedding to corporate uniforms and university wear.",
-    tech: ["React", "Corporate", "Responsive"],
-  },
-
-  // {
-  //   id: 7,
-  //   category: "Healthcare",
-  //   title: "IDTL",
-  //   image: "/portfolio/idtl.webp",
-  //   link: "https://theidtl.com/",
-  //   icon: MonitorCog,
-  //   description:
-  //     "NABL accredited laboratory website providing diagnostic testing and healthcare services.",
-  //   tech: ["React", "Healthcare", "Responsive"],
-  // },
 ];
 
 function PortfolioSection() {

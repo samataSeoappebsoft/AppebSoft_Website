@@ -1,350 +1,792 @@
 /* ==========================================
-   WHO WE ARE
+   WHO WE ARE SECTION
 ========================================== */
 
 .whoSection {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: #020059;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 8%;
-    color: #fff;
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:#020059;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:90px 7% 60px;
+
+    color:#ffffff;
+
 }
 
-/* Background Typography */
+
+
+/* ==========================================
+   BACKGROUND WORD
+========================================== */
+
 
 .bg-word {
-    position: absolute;
-    top: 50%;
-    left: -8%;
-    transform: translateY(-50%);
-    font-size: clamp(10rem, 22vw, 24rem);
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.025);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-    letter-spacing: -8px;
+
+    position:absolute;
+
+    top:50%;
+
+    left:-6%;
+
+    transform:translateY(-50%);
+
+    font-size:clamp(10rem,22vw,24rem);
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.025);
+
+    letter-spacing:-12px;
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
 }
 
-/* Floating Technology Words */
 
-/* .floating {
-  position: absolute;
-  font-size: .9rem;
-  color: rgba(255,255,255,.25);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  pointer-events: none;
-  z-index: 1;
-} */
 
-/* .react{
-    top:18%;
-    left:8%;
-}
+/* ==========================================
+   MAIN CONTENT
+========================================== */
 
-.next{
-    top:26%;
-    right:10%;
-}
-
-.node{
-    bottom:22%;
-    left:12%;
-}
-
-.ai{
-    top:55%;
-    right:15%;
-}
-
-.cloud{
-    bottom:15%;
-    right:30%;
-}
-
-.seo{
-    top:12%;
-    left:45%;
-} */
-
-/* Main */
 
 .content {
-    position: relative;
-    z-index: 5;
-    width: min(1200px, 100%);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    max-width:1200px;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
 }
+
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
 
 .smallTitle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 24px;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(255, 255, 255, .08);
-    color: #62bdec;
-    font-size: .85rem;
-    letter-spacing: 4px;
-    margin-bottom: 70px;
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    padding:10px 25px;
+
+
+    border-radius:100px;
+
+
+    background:rgba(113,40,239,.15);
+
+
+    border:
+
+    1px solid rgba(113,40,239,.35);
+
+
+    color:#62bdec;
+
+
+    font-size:12px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:4px;
+
+
+    text-transform:uppercase;
+
+
+    margin-bottom:55px;
+
+
 }
 
-/* Story */
+
+
+/* ==========================================
+   STORY AREA
+========================================== */
+
+
 .story {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 80px 0 140px;
+
+
+    position:relative;
+
+
+    width:100%;
+
+
+    height:260px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    overflow:hidden;
+
+
 }
+
+
 
 .who-line {
 
-    position: absolute;
 
-    inset: 0;
+    position:absolute;
 
-    display: flex;
 
-    justify-content: center;
+    width:100%;
 
-    align-items: center;
 
-    text-align: center;
+    margin:0;
 
-    padding: 0 60px;
 
-    font-size: clamp(3rem, 7vw, 6.8rem);
+    text-align:center;
 
-    line-height: 1.08;
 
-    font-weight: 800;
+    padding:0 20px;
 
-    letter-spacing: -3px;
 
-    text-transform: uppercase;
+    font-size:
 
-    opacity: 0;
+    clamp(3.5rem,7vw,7rem);
 
-    will-change: transform, opacity;
+
+    line-height:.95;
+
+
+    font-weight:800;
+
+
+    letter-spacing:-5px;
+
+
+    text-transform:uppercase;
+
+
+    opacity:0;
+
+
+    will-change:transform,opacity;
+
 
 }
 
-/* Glass Card */
+
+
+
+
+/* ==========================================
+   CARD
+========================================== */
+
 
 .who-card {
 
-    width: 100%;
 
-    max-width: 900px;
+    width:100%;
 
-    margin: 0 auto;
 
-    padding: 60px;
+    max-width:950px;
 
-    border-radius: 30px;
 
-    background: rgba(255,255,255,.05);
+    padding:45px 55px;
 
-    border: 1px solid rgba(255,255,255,.08);
 
-    backdrop-filter: blur(18px);
+    border-radius:30px;
 
-    opacity: 0;
 
-    transform: translateY(120px);
+    background:
+
+    rgba(255,255,255,.06);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(20px);
+
+
+    opacity:1;
+
+
+    transform:translateY(100px);
+
 
 }
+
+
+
 .who-card h3 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 25px;
-    font-weight: 700;
+
+
+    margin:0 0 20px;
+
+
+    font-size:
+
+    clamp(2rem,3vw,3rem);
+
+
+    font-weight:700;
+
+
 }
+
+
 
 .who-card p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, .72);
-    line-height: 2;
-    margin-bottom: 35px;
-}
 
-/* Divider */
 
-.divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, .08);
-    margin-bottom: 35px;
-}
+    margin:0;
 
-/* Stats */
 
-.stats{
+    font-size:1rem;
 
-display:grid;
 
-grid-template-columns:repeat(4,1fr);
+    line-height:1.8;
 
-gap:40px;
 
-margin-top:40px;
+    color:rgba(255,255,255,.72);
+
+    padding: 20px 0;
+
 
 }
+
+
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+
+/* .divider {
+
+
+    width:100%;
+
+
+    height:1px;
+
+
+    margin:35px 0;
+
+
+    background:
+
+    rgba(255,255,255,.12);
+
+
+} */
+
+
+
+/* ==========================================
+   STATS
+========================================== */
+
+
+.stats {
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(4,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
 
 .stats div {
-    text-align: center;
-}
 
-.stats h4{
 
-font-size:3.8rem;
+    text-align:center;
 
-margin-bottom:8px;
-
-color:#62bdec;
-
-font-weight:700;
 
 }
 
-.stats span{
 
-font-size:.9rem;
 
-letter-spacing:2px;
+.stats h4 {
 
-color:rgba(255,255,255,.65);
 
-text-transform:uppercase;
+    margin:0;
+
+
+    font-size:3.2rem;
+
+
+    color:#62bdec;
+
+
+    font-weight:700;
+
 
 }
 
-/* Glow */
+
+
+.stats span {
+
+
+    display:block;
+
+
+    margin-top:8px;
+
+
+    font-size:.8rem;
+
+
+    letter-spacing:2px;
+
+
+    text-transform:uppercase;
+
+
+    color:rgba(255,255,255,.55);
+
+
+}
+
+
+
+/* ==========================================
+   GLOW
+========================================== */
+
 
 .whoSection::before {
-    content: "";
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    background: #62bdec;
-    filter: blur(180px);
-    opacity: .08;
-    right: -200px;
-    top: -200px;
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:700px;
+
+
+    height:700px;
+
+
+    right:-250px;
+
+
+    top:-250px;
+
+
+    background:#62bdec;
+
+
+    filter:blur(180px);
+
+
+    opacity:.12;
+
+
 }
+
+
 
 .whoSection::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: #404fe4;
-    filter: blur(160px);
-    opacity: .05;
-    left: -180px;
-    bottom: -180px;
-}
 
-/* Hover */
 
-.who-card:hover {
-    border-color: rgba(255, 107, 53, .4);
-    transform: translateY(-8px);
-    transition: .5s;
-}
+    content:"";
 
-/* Tablet */
 
-@media(max-width:992px) {
+    position:absolute;
 
-    .story {
-        height: 220px;
-    }
 
-    .who-line {
-        font-size: 4.5rem;
-    }
+    width:500px;
 
-    .who-card {
-        padding: 40px;
-    }
 
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    height:500px;
+
+
+    left:-200px;
+
+
+    bottom:-200px;
+
+
+    background:#7128ef;
+
+
+    filter:blur(160px);
+
+
+    opacity:.08;
+
 
 }
 
-/* Mobile */
 
-@media (max-width:768px){
 
-.story{
+/* ==========================================
+   LARGE SCREEN
+========================================== */
 
-height:180px;
 
-margin:50px 0 80px;
+@media(min-width:1400px){
+
+
+.content{
+
+    max-width:1300px;
 
 }
+
 
 .who-line{
 
-font-size:2.3rem;
-
-padding:0 15px;
-
-letter-spacing:-1px;
+    font-size:7rem;
 
 }
+
+
+}
+
+
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+
+@media(max-width:991px){
+
+
+.whoSection{
+
+
+    padding:90px 40px;
+
+
+}
+
+
+
+.smallTitle{
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+.story{
+
+
+    height:220px;
+
+
+}
+
+
+
+.who-line{
+
+
+    font-size:
+
+    clamp(2.8rem,7vw,4.8rem);
+
+
+    letter-spacing:-3px;
+
+
+}
+
+
 
 .who-card{
 
-padding:30px;
+
+    padding:35px;
+
 
 }
+
+
 
 .stats{
 
-grid-template-columns:repeat(2,1fr);
 
-gap:25px;
+    grid-template-columns:repeat(2,1fr);
 
-}
 
 }
 
-/* Small Mobile */
 
-@media(max-width:480px) {
+}
 
-    .stats {
-        grid-template-columns: 1fr;
-    }
+/* ==========================================
+   MOBILE
+========================================== */
 
-    .story {
-        height: 160px;
-    }
 
-    .who-line {
-        font-size: 2rem;
-    }
+@media(max-width:768px){
 
-    .who-card {
-        padding: 25px;
-    }
+
+.whoSection{
+
+
+    padding:80px 20px;
+
+
+}
+
+
+
+.content{
+
+
+    justify-content:center;
+
+
+}
+
+
+
+.smallTitle{
+
+
+    font-size:11px;
+
+
+    letter-spacing:3px;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+.story{
+
+
+    height:160px;
+
+
+}
+
+
+
+.who-line{
+
+
+    font-size:2.25rem;
+
+
+    line-height:1;
+
+
+    letter-spacing:-2px;
+
+
+    padding:0 10px;
+
+
+}
+
+
+
+.who-card{
+
+
+    padding:25px;
+
+
+    border-radius:22px;
+
+
+}
+
+
+
+.who-card h3{
+
+
+    font-size:1.8rem;
+
+
+}
+
+
+
+.who-card p{
+
+
+    font-size:.9rem;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+.stats{
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+.stats h4{
+
+
+    font-size:2rem;
+
+
+}
+
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+
+@media(max-width:480px){
+
+
+.whoSection{
+
+
+    padding:70px 16px;
+
+
+}
+
+
+
+.story{
+
+
+    height:130px;
+
+
+}
+
+
+
+.who-line{
+
+
+    font-size:1.75rem;
+
+
+    letter-spacing:-1px;
+
+
+}
+
+
+
+.who-card{
+
+
+    padding:22px;
+
+
+}
+
+
+
+.stats{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.stats h4{
+
+
+    font-size:1.8rem;
+
+
+}
+
+
+
+.bg-word{
+
+
+    font-size:8rem;
+
+
+}
+
 
 }

@@ -1,473 +1,724 @@
-/* ====================================================
-SECTION
-==================================================== */
+/* =========================================================
+   SERVICE CUBE SECTION
+========================================================= */
+
 
 .service-cube-section {
-  position: relative;
-  min-height: 100vh;
-  background: #020059;
-  overflow: hidden;
-  color: #fff;
-  padding: 140px 8%;
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:#020059;
+
+    color:#ffffff;
+
+    overflow:hidden;
+
+    padding:70px 7% 50px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
 }
 
-/* ====================================================
-BACKGROUND
-==================================================== */
+
+
+/* =========================================================
+   BACKGROUND WORD
+========================================================= */
+
 
 .background-word {
-  position: absolute;
-  top: 50%;
-  left: 50%;
 
-  transform: translate(-50%, -50%);
+    position:absolute;
 
-  font-size: 18vw;
-  font-weight: 900;
+    top:50%;
 
-  color: rgba(255,255,255,0.02);
+    left:50%;
 
-  white-space: nowrap;
-  pointer-events: none;
+    transform:translate(-50%,-50%);
+
+    font-size:22vw;
+
+    font-weight:900;
+
+    letter-spacing:-10px;
+
+    color:rgba(255,255,255,0.03);
+
+    pointer-events:none;
+
+    white-space:nowrap;
+
 }
 
-.service-cube-section::before {
-  content: "";
 
-  position: absolute;
 
-  width: 900px;
-  height: 900px;
+/* =========================================================
+   HEADER
+========================================================= */
 
-  border-radius: 50%;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(1, 174, 248, 0.5),
-      transparent 70%
-    );
-
-  filter: blur(120px);
-
-  pointer-events: none;
-}
-
-/* ====================================================
-HEADER
-==================================================== */
 
 .service-header {
-  text-align: center;
-  margin-bottom: 120px;
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    margin-bottom:35px;
+
 }
+
 
 .service-header span {
-  color: #62bdec;
 
-  text-transform: uppercase;
+    display:block;
 
-  letter-spacing: 4px;
+    font-size:13px;
 
-  font-size: 12px;
+    letter-spacing:4px;
 
-  font-weight: 600;
+    font-weight:600;
+
+    color:#8c8cff;
+
+    margin-bottom:15px;
+
 }
+
 
 .service-header h2 {
-  margin-top: 20px;
 
-  font-size: clamp(3rem, 6vw, 7rem);
+    margin:20px auto;
 
-  line-height: 0.9;
+    max-width:700px;
 
-  font-weight: 800;
+    font-size:clamp(38px,4.5vw,64px);
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
 }
 
-/* ====================================================
-LAYOUT
-==================================================== */
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
 
 .service-layout {
-  display: flex;
 
-  align-items: center;
+    position:relative;
 
-  justify-content: space-between;
+    z-index:2;
 
-  gap: 100px;
+    display:grid;
+
+    grid-template-columns:0.9fr 1.1fr;
+
+    align-items:center;
+
+    gap:50px;
+
 }
 
-/* ====================================================
-LEFT SIDE
-==================================================== */
+
+
+/* =========================================================
+   CUBE AREA
+========================================================= */
+
 
 .cube-area {
-  width: 50%;
 
-  display: flex;
+    display:flex;
 
-  flex-direction: column;
+    flex-direction:column;
 
-  align-items: center;
+    align-items:center;
+
+    justify-content:center;
+
 }
+
+
 
 .cube-wrapper {
-  perspective: 1800px;
+
+    width:220px;
+
+    height:220px;
+
+    perspective:900px;
+
 }
 
-/* ====================================================
-3D CUBE
-==================================================== */
+
 
 .cube {
-  width: 320px;
-  height: 320px;
 
-  position: relative;
+    width:100%;
 
-  transform-style: preserve-3d;
+    height:100%;
 
-  transform: rotateX(-18deg);
+    position:relative;
 
-  cursor: grab;
+    transform-style:preserve-3d;
 
-  transition: transform .2s;
+    cursor:grab;
+
 }
+
+
 
 .cube:active {
-  cursor: grabbing;
+
+    cursor:grabbing;
+
 }
 
-/* ====================================================
-FACES
-==================================================== */
+
+
+/* =========================================================
+   CUBE FACES
+========================================================= */
+
 
 .face {
-  position: absolute;
 
-  width: 320px;
-  height: 320px;
+    position:absolute;
 
-  border-radius: 32px;
+    width:220px;
 
-  display: flex;
+    height:220px;
 
-  align-items: center;
+    display:flex;
 
-  justify-content: center;
+    align-items:center;
 
-  overflow: hidden;
+    justify-content:center;
 
-  backdrop-filter: blur(25px);
+    border-radius:32px;
 
-  background:
+
+    background:
+
     linear-gradient(
-      135deg,
-      rgba(1, 174, 248, 0.2),
-      rgba(1, 174, 248, 0.0001)
+        145deg,
+        rgba(255,255,255,.22),
+        rgba(255,255,255,.05)
     );
 
-  border: 1px solid rgba(255,255,255,.08);
 
-  box-shadow:
-    inset 0 1px 0 rgba(0, 206, 252, 0.15),
-    0 30px 80px rgba(0,0,0,.5),
-    0 0 80px rgba(255,107,53,.08);
+    border:1px solid rgba(255,255,255,.25);
+
+
+    backdrop-filter:blur(12px);
+
+
+    box-shadow:
+
+    inset 0 0 35px rgba(255,255,255,.1),
+
+    0 20px 50px rgba(0,0,0,.4);
+
 }
 
-.face::before {
-  content: "";
 
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(1, 174, 248, 0.25),
-      transparent 60%
-    );
-}
 
 .face span {
-  font-size: 8rem;
 
-  font-weight: 900;
+    font-size:60px;
 
-  color: rgba(255,255,255,.15);
+    font-weight:900;
 
-  position: relative;
-
-  z-index: 2;
 }
 
-/* ====================================================
-CUBE POSITIONS
-==================================================== */
+
 
 .front {
-  transform: translateZ(160px);
+
+    transform:
+    rotateY(0deg)
+    translateZ(110px);
+
 }
+
 
 .right {
-  transform: rotateY(90deg) translateZ(160px);
+
+    transform:
+    rotateY(90deg)
+    translateZ(110px);
+
 }
+
 
 .back {
-  transform: rotateY(180deg) translateZ(160px);
+
+    transform:
+    rotateY(180deg)
+    translateZ(110px);
+
 }
+
 
 .left {
-  transform: rotateY(-90deg) translateZ(160px);
+
+    transform:
+    rotateY(-90deg)
+    translateZ(110px);
+
 }
 
-/* ====================================================
-NAVIGATION
-==================================================== */
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 
 .cube-navigation {
-  display: flex;
 
-  gap: 25px;
+    display:flex;
 
-  margin-top: 60px;
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:35px;
+
+    position:relative;
+
+    z-index:5;
+
 }
+
+
 
 .nav-number {
-  border: none;
 
-  background: transparent;
+    width:48px;
 
-  color: rgba(255,255,255,.3);
+    height:48px;
 
-  font-size: 1.4rem;
+    display:flex;
 
-  font-weight: 700;
+    align-items:center;
 
-  cursor: pointer;
+    justify-content:center;
 
-  transition: all .4s ease;
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:transparent;
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    margin-top: 30px;
+
 }
 
-.nav-number:hover {
-  color: #fff;
-}
+
 
 .nav-number.active {
-  color: #62bdec;
 
-  transform: scale(1.3);
+    background:#ffffff;
 
-  text-shadow:
-    0 0 20px rgba(1, 174, 248, 0.5);
+    color:#020059;
+
 }
 
-/* ====================================================
-RIGHT SIDE
-==================================================== */
+
+
+/* =========================================================
+   CONTENT PANEL
+========================================================= */
+
 
 .content-panel {
-  width: 50%;
+
+    position:relative;
+
 }
+
+
 
 .content-inner {
-  max-width: 600px;
+
+    max-width:520px;
+
 }
 
-.service-number {
-  font-size: 8rem;
 
-  line-height: 1;
 
-  font-weight: 900;
+.content-tag {
 
-  color: rgba(255,255,255,.05);
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#020059;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
 }
 
-.content-inner h3 {
-  margin-top: -20px;
 
-  font-size: clamp(2.5rem,4vw,5rem);
 
-  line-height: 1;
+.service-title {
 
-  margin-bottom: 25px;
+    font-size:clamp(32px,3vw,48px);
+
+    line-height:1.1;
+
+    margin:0 0 20px;
+
+    font-weight:800;
+
 }
 
-.content-inner p {
-  font-size: 1.05rem;
 
-  line-height: 1.9;
 
-  color: rgba(255,255,255,.7);
+.service-description {
 
-  margin-bottom: 40px;
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:rgba(255,255,255,.75);
+
+    margin-bottom:30px;
+
 }
 
-.content-tag{
-  margin-bottom: 20px;
-}
 
-/* ====================================================
-FEATURES GRID
-==================================================== */
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
 
 .features-grid {
-  display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+    display:grid;
 
-  gap: 20px;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
 }
+
+
 
 .feature-card {
-  padding: 24px;
 
-  border-radius: 20px;
+    padding:15px 18px;
 
-  background:
-    rgba(255,255,255,.03);
+    border-radius:16px;
 
-  border:
-    1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
 
-  font-weight: 600;
+    border:1px solid rgba(255,255,255,.15);
 
-  transition: .4s ease;
+    font-size:14px;
+
+    transition:.3s ease;
+
 }
+
+
 
 .feature-card:hover {
-  transform: translateY(-6px);
 
-  border-color:
-    #8062ec;
+    background:white;
 
-  box-shadow:
-    0 15px 40px rgba(1, 174, 248, 0.5);
+    color:#020059;
+
 }
 
-/* ====================================================
-RESPONSIVE
-==================================================== */
 
-@media (max-width: 991px) {
 
-  .service-layout {
-    flex-direction: column;
-  }
+/* =========================================================
+   TABLET
+========================================================= */
 
-  .cube-area,
-  .content-panel {
-    width: 100%;
-  }
 
-  .content-panel {
-    text-align: center;
-  }
+@media(max-width:1100px){
 
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
+
+.service-cube-section {
+
+    padding:70px 5%;
+
 }
 
-@media (max-width: 768px) {
 
-  .cube {
-    width: 240px;
-    height: 240px;
-  }
+.service-layout {
 
-  .face {
-    width: 240px;
-    height: 240px;
-  }
+    grid-template-columns:1fr;
 
-  .front {
-    transform: translateZ(120px);
-  }
+    gap:45px;
 
-  .right {
-    transform: rotateY(90deg) translateZ(120px);
-  }
-
-  .back {
-    transform: rotateY(180deg) translateZ(120px);
-  }
-
-  .left {
-    transform: rotateY(-90deg) translateZ(120px);
-  }
-
-  .face span {
-    font-size: 5rem;
-  }
-
-  .service-number {
-    font-size: 5rem;
-  }
 }
 
-.serviceSection {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at top, #0f0f0f, #020059);
-  color: white;
-  padding: 0;
+
+
+.cube-wrapper {
+
+    width:240px;
+
+    height:240px;
+
 }
 
-/* LOCK LAYOUT INSIDE VIEW */
-.layout {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 90px;
+
+
+.face {
+
+    width:240px;
+
+    height:240px;
+
 }
 
-/* LEFT + RIGHT FIXED ALIGN */
-.left,
-.contentPanel {
-  height: 100%;
-  display: flex;
-  align-items: center;
+
+
+.front {
+
+    transform:
+    rotateY(0deg)
+    translateZ(120px);
+
 }
 
-/* RIGHT SIDE MUST NOT EXPAND PAGE */
-.contentPanel {
-  width: 50%;
-  overflow: hidden;
+
+.right {
+
+    transform:
+    rotateY(90deg)
+    translateZ(120px);
+
 }
 
-/* REMOVE ANY EXTRA MARGIN PUSH */
-.contentInner {
-  max-height: 400px;
-  overflow: hidden;
+
+.back {
+
+    transform:
+    rotateY(180deg)
+    translateZ(120px);
+
 }
 
-/* BACKGROUND TEXT FIX */
-.bgText {
-  position: absolute;
-  font-size: 120px;
-  opacity: 0.03;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+
+.left {
+
+    transform:
+    rotateY(-90deg)
+    translateZ(120px);
+
 }
 
-/* OPTIONAL: STOP SCROLL GLITCH FEEL */
-body {
-  overflow-x: hidden;
+
+
+.content-panel {
+
+    text-align:center;
+
+}
+
+
+
+.content-inner {
+
+    margin:auto;
+
+}
+
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+
+@media(max-width:600px){
+
+
+.service-cube-section {
+
+    padding:60px 20px;
+
+}
+
+
+
+.background-word {
+
+    font-size:35vw;
+
+}
+
+
+
+.service-header h2 {
+
+    font-size:36px;
+
+}
+
+
+
+.cube-wrapper {
+
+    width:180px;
+
+    height:180px;
+
+}
+
+
+
+.face {
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:25px;
+
+}
+
+
+
+.face span {
+
+    font-size:50px;
+
+}
+
+
+
+.front {
+
+    transform:
+    rotateY(0deg)
+    translateZ(90px);
+
+}
+
+
+.right {
+
+    transform:
+    rotateY(90deg)
+    translateZ(90px);
+
+}
+
+
+.back {
+
+    transform:
+    rotateY(180deg)
+    translateZ(90px);
+
+}
+
+
+.left {
+
+    transform:
+    rotateY(-90deg)
+    translateZ(90px);
+
+}
+
+
+
+.cube-navigation {
+
+    margin-top:30px;
+
+}
+
+
+
+.nav-number {
+
+    width:42px;
+
+    height:42px;
+
+}
+
+
+
+.features-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.service-title {
+
+    font-size:30px;
+
+}
+
+
+
+.service-description {
+
+    font-size:15px;
+
+}
+
+
+
+    .content-tag {
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
 }

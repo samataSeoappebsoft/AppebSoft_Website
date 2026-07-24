@@ -6,21 +6,38 @@ import MenuOverlay from "./MenuOverlay";
 import WhiteLogo from "../../assets/logo-white.png";
 import ColorLogo from "../../assets/logo-color.png";
 
+import { Link } from "react-router-dom";
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= 991
+  );
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 991);
+    };
+
+    handleScroll();
+    handleResize();
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener(
         "scroll",
         handleScroll
+      );
+      window.removeEventListener(
+        "resize",
+        handleResize
       );
     };
   }, []);
@@ -28,15 +45,18 @@ function Navbar() {
   return (
     <>
       <header
-        className={`navbar ${scrolled ? "scrolled" : ""}`}
+        className={`navbar ${scrolled || isMobile ? "scrolled" : ""
+          }`}
       >
         <div className="navbar-inner">
 
-          <img
-            src={scrolled ? ColorLogo : WhiteLogo}
-            alt="AppeeSoft Logo"
-            className="logo"
-          />
+          <Link to="/" className="logo-link">
+            <img
+              src={isMobile || scrolled ? ColorLogo : WhiteLogo}
+              alt="AppeeSoft Logo"
+              className="logo"
+            />
+          </Link>
 
           <button
             className="menu-button"

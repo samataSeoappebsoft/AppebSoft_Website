@@ -1,1219 +1,949 @@
-/* ==========================================
-   SERVICE HERO
+/* =====================================================
+   SERVICE HERO SECTION
    APPEBSOFT
-========================================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+===================================================== */
 
 .service-hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #020059;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 130px 8%;
-}
 
-/* ==========================
-   BACKGROUND
-========================== */
+    position:relative;
 
-.hero-gradient {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(circle at 18% 18%,
-      rgba(255, 107, 53, .14),
-      transparent 40%),
+    width:100%;
 
-    radial-gradient(circle at 85% 75%,
-      rgba(255, 140, 66, .12),
-      transparent 42%),
+    min-height:100vh;
 
-    radial-gradient(circle at 50% 100%,
-      rgba(255, 107, 53, .08),
-      transparent 60%);
-}
+    display:flex;
 
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+    align-items:center;
 
-  background-image:
-    linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+    overflow:hidden;
 
-  background-size: 70px 70px;
+    background:#020059;
 
-  mask-image:
-    radial-gradient(circle at center,
-      black 45%,
-      transparent 100%);
-}
+    color:#ffffff;
 
-.noise-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  pointer-events: none;
-
-  opacity: .22;
-
-  background-image:
-    radial-gradient(rgba(255, 255, 255, .05) 1px,
-      transparent 1px);
-
-  background-size: 5px 5px;
-}
-
-/* ==========================
-   GLOW BLOBS
-========================== */
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-  pointer-events: none;
-}
-
-.blob-a {
-
-  width: 430px;
-  height: 430px;
-
-  background: #62bdec;
-
-  top: -140px;
-  left: -140px;
-
-  opacity: .22;
+    padding:90px 7% 40px;
 
 }
 
-.blob-b {
 
-  width: 370px;
-  height: 370px;
 
-  background: #404fe4;
+/* =====================================================
+   CONTENT
+===================================================== */
 
-  bottom: -120px;
-  right: -100px;
-
-  opacity: .18;
-
-}
-
-.blob-c {
-
-  width: 300px;
-  height: 300px;
-
-  background: #62bdec;
-
-  top: 40%;
-  left: 45%;
-
-  opacity: .10;
-
-}
-
-/* ==========================
-   LEFT CONTENT
-========================== */
 
 .service-content {
 
-  position: relative;
+    position:relative;
 
-  width: 55%;
+    z-index:5;
 
-  z-index: 5;
+    width:100%;
+
+    max-width:900px;
 
 }
+
+
+
+
+
+/* =====================================================
+   TAG
+===================================================== */
+
 
 .service-tag {
 
-  display: inline-flex;
+    display:inline-flex;
 
-  align-items: center;
+    align-items:center;
 
-  padding: 10px 22px;
+    padding:10px 22px;
 
-  border-radius: 50px;
+    border-radius:999px;
 
-  background: rgba(1, 174, 248, 0.);
+    border:1px solid rgba(98,189,236,.45);
 
-  border: 1px solid rgba(1, 174, 248, 0.5);
+    color:#62bdec;
 
-  color: #62bdec;
+    font-size:13px;
 
-  font-size: .82rem;
+    font-weight:600;
 
-  letter-spacing: 2px;
+    letter-spacing:4px;
 
-  font-weight: 700;
+    text-transform:uppercase;
 
-  text-transform: uppercase;
-
-  margin-bottom: 35px;
+    margin-top:60px;
 
 }
+
+
+
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
 
 .headline-group {
 
-  overflow: hidden;
+    margin-top:22px;
+
+    overflow:hidden;
 
 }
 
-.service-line-1,
-.service-line-2,
-.changing-word {
 
-  font-size: clamp(3rem, 5.8vw, 5.5rem);
-
-  font-weight: 800;
-
-  line-height: .95;
-
-  letter-spacing: -1px;
-
-}
 
 .service-line-1 {
 
-  color: #ffffff;
+    margin:0;
+
+    font-size:clamp(3.5rem,6vw,6rem);
+
+    line-height:.92;
+
+    font-weight:800;
+
+    letter-spacing:-4px;
 
 }
 
-.service-line-2,
-.changing-word {
 
-  color: #62bdec;
-  margin-top: 12px;
+
+.service-line-2 {
+
+    margin-top:12px;
+
+    color:#62bdec;
+
+    font-size:clamp(2.8rem,5vw,5rem);
+
+    line-height:1.05;
+
+    font-weight:700;
+
+    letter-spacing:-1.5px;
+
+    min-height:1.2em;
 
 }
+
+
+
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
 
 .service-description {
 
-  max-width: 650px;
+    max-width:600px;
 
-  margin-top: 35px;
+    margin-top:25px;
 
-  color: rgba(255, 255, 255, .68);
+    color:rgba(255,255,255,.72);
 
-  font-size: 1.08rem;
+    font-size:1rem;
 
-  line-height: 1.9;
+    line-height:1.75;
 
 }
 
-/* ==========================
+
+
+
+
+/* =====================================================
    BUTTONS
-========================== */
+===================================================== */
+
 
 .service-actions {
 
-  display: flex;
+    display:flex;
 
-  gap: 18px;
+    gap:18px;
 
-  margin-top: 45px;
+    margin-top:32px;
 
 }
 
-.primary-btn,
+
+
+.primary-btn1,
 .secondary-btn {
 
-  cursor: pointer;
 
-  border: none;
+    height:52px;
 
-  padding: 18px 34px;
+    padding:0 32px;
 
-  border-radius: 60px;
+    border-radius:999px;
 
-  font-size: .95rem;
+    font-size:15px;
 
-  font-weight: 600;
+    font-weight:600;
 
-  transition: .35s;
+    cursor:pointer;
+
+    transition:.35s ease;
 
 }
+
+
 
 .primary-btn1 {
-  padding: 15px 28px;
 
-  border: none;
+    background:#7128ef;
 
-  background: #7128ef;
+    color:#ffffff;
 
-  color: white;
+    border:none;
 
-  border-radius: 100px;
-
-  cursor: pointer;
-
-  font-size: 15px;
 }
+
+
+
+.primary-btn1:hover {
+
+    transform:translateY(-4px);
+
+}
+
+
 
 .secondary-btn {
-  padding: 15px 28px;
-
-  border: 1px solid rgba(255, 255, 255, .2);
-
-  background: transparent;
-
-  color: white;
-
-  border-radius: 100px;
-
-  cursor: pointer;
-
-  font-size: 15px;
-}
-.primary-btn:hover {
-
-  transform: translateY(-6px);
 
 
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:#ffffff;
 
 }
+
 
 
 .secondary-btn:hover {
 
-  background: rgba(255, 255, 255, .08);
+    border-color:#62bdec;
 
-  transform: translateY(-6px);
+    color:#62bdec;
 
 }
 
-/* ==========================
+
+
+
+
+/* =====================================================
    STATS
-========================== */
+===================================================== */
+
 
 .service-stats {
 
     display:flex;
 
-    gap:45px;
+    gap:50px;
 
-    margin-top:45px;
+    margin-top:38px;
 
 }
+
+
+
+.stat {
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
 
 .stat h3 {
 
-  color: white;
+    margin:0;
 
-    font-size:1.7rem;
+    font-size:1.75rem;
 
 }
+
+
 
 .stat span {
 
-  color: rgba(255, 255, 255, .65);
+    margin-top:5px;
 
-  font-size: .95rem;
+    color:rgba(255,255,255,.6);
 
-  line-height: 1.6;
+    font-size:.9rem;
 
 }
 
-/* ==========================================
-   RIGHT SIDE
-========================================== */
+
+
+
+
+/* =====================================================
+   FLOATING SERVICES
+   STATIC ONLY
+   NO ANIMATION
+===================================================== */
+
+
+/* =====================================================
+   FLOATING SERVICES
+   STATIC COMPACT CARDS
+===================================================== */
 
 .floating-services {
 
-  position: relative;
+    position:absolute;
 
-  width: 45%;
+    right:6%;
 
-  height: 780px;
+    top:50%;
 
-  display: flex;
+    transform:translateY(-50%);
 
-  align-items: center;
+    width:230px;
 
-  justify-content: center;
+    display:flex;
 
-  z-index: 5;
+    flex-direction:column;
 
-}
+    gap:16px;
 
+    z-index:3;
 
-/* ==========================================
-   HERO IMAGE
-========================================== */
-
-.hero-circle {
-
-  position: absolute;
-
-  width: 420px;
-
-  height: 420px;
-
-  border-radius: 50%;
-
-  overflow: hidden;
-
-  z-index: 2;
-
-  border: 2px solid rgba(255, 107, 53, .18);
-
-  background: rgba(255, 255, 255, .04);
-
-  backdrop-filter: blur(25px);
-
-  box-shadow:
-
-    0 0 0 10px rgba(255, 107, 53, .05),
-
-    0 0 70px rgba(255, 107, 53, .22),
-
-    inset 0 0 50px rgba(255, 255, 255, .06);
-
-}
-
-.hero-circle::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: -25px;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(255, 107, 53, .12);
-
-  animation: rotateRing 20s linear infinite;
-
-}
-
-.hero-circle::after {
-
-  content: "";
-
-  position: absolute;
-
-  inset: -45px;
-
-  border-radius: 50%;
-
-  border: 1px dashed rgba(255, 140, 66, .15);
-
-  animation: rotateRingReverse 25s linear infinite;
-
-}
-
-.hero-circle img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: .8s;
-
-}
-
-.hero-circle:hover img {
-
-  transform: scale(1.08);
+    pointer-events:none;
 
 }
 
 
-/* ==========================================
-   FLOATING CARDS
-========================================== */
 
 .floating-card {
 
-  position: absolute;
+    position:relative;
 
-  width: 220px;
+    width:100%;
 
-  padding: 24px;
+    padding:12px 16px;
 
-  border-radius: 24px;
+    border-radius:14px;
 
-  background: rgba(18, 18, 18, .72);
+    background:rgba(255,255,255,.06);
 
-  backdrop-filter: blur(24px);
+    border:1px solid rgba(255,255,255,.14);
 
-  border: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter:blur(18px);
 
-  box-shadow:
+    color:#ffffff;
 
-    0 20px 50px rgba(0, 0, 0, .45),
+    overflow:hidden;
 
-    0 0 35px rgba(255, 107, 53, .10);
+    animation:none !important;
 
-  transition: .45s;
+    transform:none !important;
 
-  overflow: hidden;
-
-  cursor: pointer;
-
-  z-index: 5;
-
-}
-
-.floating-card::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(135deg,
-
-      rgba(255, 255, 255, .08),
-
-      transparent);
-
-  opacity: 0;
-
-  transition: .45s;
-
-}
-
-.floating-card:hover {
-
-  transform:
-
-    translateY(-12px) scale(1.05);
-
-  border-color: #62bdec;
-
-  box-shadow:
-
-    0 30px 70px rgba(0, 0, 0, .55),
-
-    0 0 60px rgba(255, 107, 53, .35);
-
-}
-
-.floating-card:hover::before {
-
-  opacity: 1;
+    transition:none !important;
 
 }
 
 
-/* ==========================================
-   CARD ICON
-========================================== */
 
-.service-icon {
-
-  width: 68px;
-
-  height: 68px;
-
-  border-radius: 18px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 30px;
-
-  background: linear-gradient(135deg,
-
-      #62bdec,
-
-      #404fe4);
-
-  margin-bottom: 18px;
-
-}
+/* Text */
 
 .floating-card h4 {
 
-  font-size: 1.15rem;
+    margin:0;
 
-  font-weight: 700;
+    font-size:.82rem;
 
-  color: #fff;
+    font-weight:600;
 
-  margin-bottom: 10px;
+    line-height:1.3;
 
 }
+
+
 
 .floating-card p {
 
-  font-size: .9rem;
+    margin:4px 0 0;
 
-  line-height: 1.7;
+    font-size:.7rem;
 
-  color: rgba(255, 255, 255, .65);
+    line-height:1.4;
+
+    color:rgba(255,255,255,.65);
+
+}
+
+
+
+
+
+/* Balanced stagger */
+
+.floating-card:nth-child(odd){
+
+    margin-left:20px;
+
+    width:210px;
 
 }
 
 
-/* ==========================================
-   CARD POSITIONS
-========================================== */
 
-.card-1 {
+.floating-card:nth-child(even){
 
-  top: 40px;
+    margin-left:0;
 
-  left: 10px;
+    width:230px;
 
 }
 
-.card-2 {
 
-  top: 90px;
 
-  right: 0;
 
-}
 
-.card-3 {
+/* Remove hover effects */
 
-  top: 320px;
+.floating-card:hover {
 
-  left: -20px;
+    transform:none !important;
 
-}
-
-.card-4 {
-
-  top: 340px;
-
-  right: -10px;
-
-}
-
-.card-5 {
-
-  bottom: 60px;
-
-  left: 40px;
-
-}
-
-.card-6 {
-
-  bottom: 20px;
-
-  right: 40px;
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media (max-width: 1400px) {
-
-  .service-content {
-    width: 58%;
-  }
-
-  .floating-services {
-    width: 42%;
-  }
-
-  .floating-card {
-    width: 210px;
-    padding: 22px;
-  }
-
-  .hero-circle {
-    width: 300px;
-    height: 300px;
-  }
-
-}
-
-@media (max-width: 1200px) {
-
-  .service-hero {
-    padding: 120px 6%;
-  }
-
-  .service-content {
-    width: 100%;
-    max-width: 720px;
-  }
-
-  .floating-services {
-    width: 420px;
-  }
-
-  .floating-card {
-    width: 190px;
-  }
-
-  .hero-circle {
-    width: 270px;
-    height: 270px;
-  }
-
-}
-
-@media (max-width: 991px) {
-
-  .service-hero {
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 120px 40px 80px;
-    min-height: auto;
-  }
-
-  .service-content {
-    width: 100%;
-    text-align: center;
-  }
-
-  .headline-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-description {
-    margin: 35px auto;
-  }
-
-  .service-actions {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .service-stats {
-    justify-content: center;
-    gap: 35px;
-  }
-
-  .floating-services {
-    position: relative;
-    width: 100%;
-    height: auto;
-    right: auto;
-    top: auto;
-    margin-top: 70px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-
-  .hero-circle {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin: 0 auto 30px;
-    grid-column: 1 / -1;
-  }
-
-  .floating-card {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    width: 100%;
-    transform: none !important;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .service-hero {
-    padding: 100px 24px 70px;
-  }
-
-  .service-line-1,
-  .service-line-2 {
-    font-size: 3rem;
-    letter-spacing: -1px;
-  }
-
-  .service-description {
-    font-size: 1rem;
-  }
-
-  .service-actions {
-    flex-direction: column;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
-  }
-
-  .service-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-  }
-
-  .floating-services {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-circle {
-    width: 240px;
-    height: 240px;
-  }
-
-  .scroll-indicator {
-    display: none;
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .service-line-1,
-  .service-line-2 {
-    font-size: 2.3rem;
-  }
-
-  .service-tag {
-    font-size: .72rem;
-  }
-
-  .service-description {
-    font-size: .95rem;
-  }
-
-  .hero-circle {
-    width: 210px;
-    height: 210px;
-  }
-
-  .floating-card {
-    padding: 22px;
-  }
-
-  .service-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.6rem;
-  }
+    box-shadow:none !important;
 
 }
 
 
-/* ===========================
-   ANIMATIONS
-=========================== */
-
-@keyframes floatY {
-
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-14px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-
-}
-
-@keyframes pulseGlow {
-
-  0% {
-    box-shadow: 0 0 25px rgba(255, 107, 53, .15);
-  }
-
-  50% {
-    box-shadow: 0 0 60px rgba(255, 107, 53, .4);
-  }
-
-  100% {
-    box-shadow: 0 0 25px rgba(255, 107, 53, .15);
-  }
-
-}
-
-@keyframes scrollMove {
-
-  0% {
-    top: 0;
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  100% {
-    top: 58px;
-    opacity: 0;
-  }
-
-}
-
-.hero-circle {
-  animation: pulseGlow 6s ease-in-out infinite;
-}
 
 
-/* ===========================
-   SCROLLBAR
-=========================== */
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #020059;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #62bdec;
-  border-radius: 50px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #404fe4;
-}
+/* Text */
 
 
-/* ===========================
-   TEXT SELECTION
-=========================== */
+.floating-card h4 {
 
-::selection {
-  background: #62bdec;
-  color: #ffffff;
-}
 
-/* ========================================
-   RESPONSIVE
-======================================== */
+    margin:0;
 
-@media (max-width:1400px) {
 
-  .service-hero {
-    padding: 130px 6%;
-  }
+    font-size:1rem;
 
-  .service-content {
-    width: 55%;
-  }
 
-  .floating-services {
-    width: 40%;
-  }
+    font-weight:700;
 
-  .floating-card {
-    width: 200px;
-    padding: 22px;
-  }
-
-  .hero-circle {
-    width: 280px;
-    height: 280px;
-  }
 
 }
 
 
-@media (max-width:1200px) {
 
-  .service-hero {
-    padding: 120px 5%;
-  }
+.floating-card p {
 
-  .service-content {
-    width: 58%;
-  }
 
-  .floating-services {
-    width: 38%;
-  }
+    margin-top:6px;
 
-  .floating-card {
-    width: 180px;
-    padding: 20px;
-  }
 
-  .service-line-1,
-  .service-line-2 {
-    font-size: 4.2rem;
-  }
+    margin-bottom:0;
 
-  .service-description {
-    font-size: 1rem;
-  }
+
+    color:rgba(255,255,255,.65);
+
+
+    font-size:.85rem;
+
+
+    line-height:1.5;
+
 
 }
 
 
-@media (max-width:992px) {
 
-  .service-hero {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    padding: 100px 40px 70px;
+/* =====================================================
+   BACKGROUND BLOBS
+===================================================== */
 
-    min-height: auto;
 
-  }
+.blob {
 
-  .service-content {
 
-    width: 100%;
-    text-align: center;
-    order: 1;
+    position:absolute;
 
-  }
 
-  .headline-group {
+    border-radius:50%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-  }
+    pointer-events:none;
 
-  .service-description {
-
-    margin: 30px auto;
-    max-width: 700px;
-
-  }
-
-  .service-actions {
-
-    justify-content: center;
-    flex-wrap: wrap;
-
-  }
-
-  .service-stats {
-
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
-
-  }
-
-  .floating-services {
-
-    position: relative;
-
-    width: 100%;
-    height: auto;
-
-    right: auto;
-    top: auto;
-
-    margin-top: 70px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 24px;
-
-    order: 2;
-
-  }
-
-  .hero-circle {
-
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    transform: none;
-
-    margin: auto;
-
-    width: 260px;
-    height: 260px;
-
-    grid-column: 1/-1;
-
-  }
-
-  .floating-card {
-
-    position: relative !important;
-
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    width: 100%;
-
-    transform: none !important;
-
-  }
 
 }
 
 
-@media (max-width:768px) {
 
-  .service-hero {
+.blob-a {
 
-    padding: 90px 25px 60px;
 
-  }
+    width:620px;
 
-  .service-tag {
 
-    font-size: .75rem;
+    height:620px;
 
-  }
 
-  .service-line-1,
-  .service-line-2 {
+    right:-170px;
 
-    font-size: 3rem;
 
-    letter-spacing: -1px;
+    top:-140px;
 
-  }
 
-  .service-description {
+    background:#62bdec;
 
-    font-size: 1rem;
-    line-height: 1.8;
 
-  }
+    filter:blur(180px);
 
-  .service-actions {
 
-    flex-direction: column;
-    gap: 16px;
+    opacity:.25;
 
-  }
-
-  .primary-btn,
-  .secondary-btn {
-
-    width: 100%;
-
-  }
-
-  .service-stats {
-
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-
-  }
-
-  .floating-services {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .hero-circle {
-
-    width: 230px;
-    height: 230px;
-
-  }
-
-  .scroll-indicator {
-
-    display: none;
-
-  }
 
 }
 
 
-@media (max-width:480px) {
 
-  .service-hero {
+.blob-b {
 
-    padding: 80px 20px 50px;
 
-  }
+    width:430px;
 
-  .service-line-1,
-  .service-line-2 {
 
-    font-size: 2.2rem;
+    height:430px;
 
-  }
 
-  .service-description {
+    left:-120px;
 
-    font-size: .95rem;
 
-  }
+    bottom:-120px;
 
-  .floating-card {
 
-    padding: 20px;
+    background:#7128ef;
 
-  }
 
-  .service-icon {
+    filter:blur(160px);
 
-    width: 60px;
-    height: 60px;
 
-    font-size: 1.6rem;
+    opacity:.18;
 
-  }
 
-  .floating-card h4 {
+}
 
-    font-size: 1.15rem;
+/* =====================================================
+   TABLET
+===================================================== */
 
-  }
 
-  .floating-card p {
+@media(max-width:991px){
 
-    font-size: .9rem;
 
-  }
+.service-hero {
 
-  .hero-circle {
 
-    width: 200px;
-    height: 200px;
+    padding:90px 40px 40px;
 
-  }
+    text-align:center;
+
+
+}
+
+
+
+.service-content {
+
+
+    max-width:720px;
+
+    margin:auto;
+
+
+}
+
+
+
+.service-description {
+
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+
+}
+
+
+
+.service-actions {
+
+
+    justify-content:center;
+
+
+}
+
+
+
+.service-stats {
+
+
+    justify-content:center;
+
+
+}
+
+
+
+/* Hide right floating cards */
+
+.floating-services {
+
+
+    display:none;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+
+@media(max-width:767px){
+
+
+.service-hero {
+
+
+    min-height:auto;
+
+
+    padding:80px 20px 35px;
+
+
+}
+
+
+
+
+.service-tag {
+
+
+    font-size:11px;
+
+
+    letter-spacing:2px;
+
+
+    padding:9px 18px;
+
+
+}
+
+
+
+
+
+.service-line-1 {
+
+
+    font-size:2.3rem;
+
+
+    letter-spacing:-1px;
+
+
+    line-height:1;
+
+
+}
+
+
+
+
+
+.service-line-2 {
+
+
+    font-size:1.8rem;
+
+
+    letter-spacing:-0.3px;
+
+
+    line-height:1.18;
+
+
+    min-height:2em;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.service-description {
+
+
+    font-size:.95rem;
+
+
+    line-height:1.65;
+
+
+}
+
+
+
+
+
+.service-actions {
+
+
+    flex-direction:column;
+
+
+    width:100%;
+
+
+}
+
+
+
+.primary-btn1,
+.secondary-btn {
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+.service-stats {
+
+
+    width:100%;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    gap:10px;
+
+
+}
+
+
+
+.stat {
+
+
+    flex:1;
+
+
+}
+
+
+
+.stat h3 {
+
+
+    font-size:1.25rem;
+
+
+}
+
+
+
+.stat span {
+
+
+    font-size:.75rem;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+
+@media(max-width:480px){
+
+
+.service-hero {
+
+
+    padding:70px 16px 25px;
+
+
+}
+
+
+
+
+
+.service-tag {
+
+
+    font-size:10px;
+
+
+    letter-spacing:1.5px;
+
+
+}
+
+
+
+
+
+.service-line-1 {
+
+
+    font-size:2rem;
+
+
+    letter-spacing:-0.5px;
+
+
+}
+
+
+
+
+
+.service-line-2 {
+
+
+    font-size:1.5rem;
+
+
+    letter-spacing:0;
+
+
+    line-height:1.22;
+
+
+}
+
+
+
+
+
+.service-description {
+
+
+    font-size:.9rem;
+
+
+}
+
+
+
+
+
+.service-actions {
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+.primary-btn1,
+.secondary-btn {
+
+
+    height:48px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.service-stats {
+
+
+    gap:8px;
+
+
+}
+
+
+
+.stat h3 {
+
+
+    font-size:1.1rem;
+
+
+}
+
+
+
+.stat span {
+
+
+    font-size:.7rem;
+
+
+}
+
+
 
 }

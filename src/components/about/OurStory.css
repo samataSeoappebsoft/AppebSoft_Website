@@ -7,7 +7,7 @@
   min-height: 100vh;
   background: #020059;
   color: #fff;
-  padding: 120px 8%;
+  padding: 90px 8% 120px; /* top padding reduced from 120px */
   position: relative;
 }
 
@@ -39,7 +39,7 @@
 /* header */
 .story-header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 40px; /* was 100px */
 }
 
 .story-header h2 {
@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: 140px;
+  margin-top: -30px;
 }
 
 /* center line */
@@ -132,7 +133,7 @@
   width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -188,18 +189,27 @@
 ========================= */
 
 @media (max-width: 900px) {
+
+  /* Keep the timeline line */
   .timeline-line {
     left: 20px;
   }
 
+  /* Move the dot to align with the year */
   .timeline-dot {
     left: 20px;
+    top: 0px; /* Adjust this value until it aligns perfectly with the year */
+    transform: translateX(-50%);
   }
 
   .timeline-content {
     grid-template-columns: 1fr;
     width: 100%;
-    text-align: left;
-    padding-left: 40px;
+    padding-left: 45px;
+    gap: 24px;
+  }
+
+  .timeline-text .year {
+    margin-top: 0;
   }
 }

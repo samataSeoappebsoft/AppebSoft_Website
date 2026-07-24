@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 import "./AICommandCenter.css";
 
@@ -9,110 +10,115 @@ gsap.registerPlugin(ScrollTrigger);
 function AICommandCenter() {
   const sectionRef = useRef();
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.set(".node-1", {
-        x: -300,
-        y: -200,
-        opacity: 0,
-      });
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.set(".node-1", {
+      x: -180,
+      y: -120,
+      opacity: 0,
+    });
 
-      gsap.set(".node-2", {
-        x: 300,
-        y: -200,
-        opacity: 0,
-      });
+    gsap.set(".node-2", {
+      x: 180,
+      y: -120,
+      opacity: 0,
+    });
 
-      gsap.set(".node-3", {
-        x: -300,
-        y: 200,
-        opacity: 0,
-      });
+    gsap.set(".node-3", {
+      x: -180,
+      y: 120,
+      opacity: 0,
+    });
 
-      gsap.set(".node-4", {
-        x: 300,
-        y: 200,
-        opacity: 0,
-      });
+    gsap.set(".node-4", {
+      x: 180,
+      y: 120,
+      opacity: 0,
+    });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".ai-network",
-          start: "top 70%",
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".ai-network",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.from(".ai-core", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.25,
+      ease: "back.out(2)",
+    })
+
+      .to(
+        ".node-1",
+        {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          duration: 0.18,
+          ease: "power3.out",
         },
-      });
+        "-=0.08"
+      )
 
-      tl.from(".ai-core", {
-        scale: 0,
-        opacity: 0,
-        duration: 1.2,
-        ease: "back.out(2)",
-      })
-        .to(
-          ".node-1",
-          {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power4.out",
-          },
-          "-=0.4"
-        )
-        .to(
-          ".node-2",
-          {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power4.out",
-          },
-          "-=0.7"
-        )
-        .to(
-          ".node-3",
-          {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power4.out",
-          },
-          "-=0.7"
-        )
-        .to(
-          ".node-4",
-          {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power4.out",
-          },
-          "-=0.7"
-        );
+      .to(
+        ".node-2",
+        {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          duration: 0.18,
+          ease: "power3.out",
+        },
+        "-=0.12"
+      )
 
-      gsap.to(".core-ring", {
-        scale: 1.2,
-        opacity: 0,
-        duration: 3,
-        repeat: -1,
-        ease: "none",
-      });
+      .to(
+        ".node-3",
+        {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          duration: 0.18,
+          ease: "power3.out",
+        },
+        "-=0.12"
+      )
 
-      gsap.to(".ring-2", {
-        scale: 1.4,
-        opacity: 0,
-        duration: 3,
-        delay: 1,
-        repeat: -1,
-        ease: "none",
-      });
-    }, sectionRef);
+      .to(
+        ".node-4",
+        {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          duration: 0.18,
+          ease: "power3.out",
+        },
+        "-=0.12"
+      );
 
-    return () => ctx.revert();
-  }, []);
+    gsap.to(".core-ring", {
+      scale: 1.25,
+      opacity: 0,
+      duration: 1.8,
+      repeat: -1,
+      ease: "none",
+    });
+
+    gsap.to(".ring-2", {
+      scale: 1.45,
+      opacity: 0,
+      duration: 1.8,
+      delay: 0.5,
+      repeat: -1,
+      ease: "none",
+    });
+  }, sectionRef);
+
+  return () => ctx.revert();
+}, []);
 
   return (
     <section
@@ -193,9 +199,9 @@ function AICommandCenter() {
           AI Enabled
         </h3> */}
 
-        <button>
+        <Link to="/contact" className="ai-btn">
           START YOUR AI JOURNEY →
-        </button>
+        </Link>
       </div>
     </section>
   );

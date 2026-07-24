@@ -20,36 +20,89 @@ const services = [
 function ServicesUniverse() {
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    gsap.from(".service-card", {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.06,
-      ease: "power3.out",
+useEffect(() => {
+
+  const ctx = gsap.context(() => {
+
+    const cards = gsap.utils.toArray(".service-card");
+
+
+    gsap.set(cards, {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      rotateY: 0,
     });
 
-    const cards = document.querySelectorAll(".service-card");
+
+    gsap.fromTo(
+      cards,
+      {
+        opacity: 0,
+        y: 40,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power3.out",
+        delay:0.2,
+      }
+    );
+
 
     const handleMove = (e) => {
-      const x = (window.innerWidth / 2 - e.clientX) / 25;
-      const y = (window.innerHeight / 2 - e.clientY) / 25;
 
-      cards.forEach((card) => {
-        gsap.to(card, {
-          rotateY: x,
-          rotateX: y,
-          transformPerspective: 1000,
-          transformOrigin: "center",
-          duration: 0.5,
-        });
+      const x =
+        (window.innerWidth / 2 - e.clientX) / 40;
+
+      const y =
+        (window.innerHeight / 2 - e.clientY) / 40;
+
+
+      gsap.to(cards, {
+
+        rotateY:x,
+
+        rotateX:y,
+
+        transformPerspective:1000,
+
+        transformOrigin:"center",
+
+        duration:0.5,
+
+        ease:"power2.out",
+
       });
+
     };
 
-    window.addEventListener("mousemove", handleMove);
 
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
+    window.addEventListener(
+      "mousemove",
+      handleMove
+    );
+
+
+    return () => {
+
+      window.removeEventListener(
+        "mousemove",
+        handleMove
+      );
+
+    };
+
+
+  }, sectionRef);
+
+
+  return () => ctx.revert();
+
+
+}, []);
 
   return (
     <section className="services-3d" ref={sectionRef}>

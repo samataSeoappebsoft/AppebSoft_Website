@@ -8,9 +8,7 @@ const milestones = [
     title: "Where It All Began",
     description:
       "AppeeSoft was founded with a vision to build meaningful digital solutions that help businesses innovate, grow, and succeed.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55?w=1600&q=80"
-  },
+    image:"/grow.png", },
   {
     year: "2021",
     title: "Growing Together",

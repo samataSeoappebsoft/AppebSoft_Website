@@ -1,196 +1,480 @@
+/* =====================================================
+   FINAL CTA SECTION
+===================================================== */
+
+
 .final-cta {
-  min-height: 100vh;
 
-  background: #020059;
+    min-height:65vh;
 
-  color: #fff;
+    background:#020059;
 
-  position: relative;
+    color:#ffffff;
 
-  overflow: hidden;
+    position:relative;
 
-  display: flex;
+    overflow:hidden;
 
-  align-items: center;
+    display:flex;
 
-  justify-content: center;
+    align-items:center;
 
-  padding: 120px 5%;
+    justify-content:center;
+
+    padding:70px 5%;
+
+    border:none !important;
+
 }
 
-/* glow */
+
+/* REMOVE DIVIDER */
+
+.final-cta::after {
+
+    content:none !important;
+
+}
+
+
+
+/* =====================================================
+   GLOW
+===================================================== */
+
 
 .cta-glow {
-  position: absolute;
 
-  width: 500px;
-  height: 500px;
+    position:absolute;
 
-  border-radius: 50%;
+    width:450px;
 
-  background:
+    height:450px;
+
+    border-radius:50%;
+
+    background:
+
     radial-gradient(
-      rgba(1, 174, 248, 0.5),
-      transparent 70%
+        circle,
+        rgba(113,40,239,.45),
+        transparent 70%
     );
 
-  transform:
-    translate(-50%, -50%);
+    transform:translate(-50%,-50%);
 
-  pointer-events: none;
+    pointer-events:none;
 
-  filter: blur(60px);
+    filter:blur(70px);
 
-  z-index: 1;
+    z-index:1;
+
 }
 
-/* content */
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
 
 .cta-content {
-  position: relative;
 
-  z-index: 2;
+    position:relative;
 
-  text-align: center;
+    z-index:2;
 
-  width: 100%;
+    width:100%;
+
+    text-align:center;
+
 }
 
-/* heading */
 
-/* .cta-heading {
-  overflow: hidden;
-} */
 
-.cta-line h2 {
-  font-size:16px;
+/* =====================================================
+   HEADING
+===================================================== */
 
-  line-height: .82;
 
-  font-weight: 900;
+.cta-heading {
 
-  letter-spacing: -5px;
+    width:100%;
+
+    overflow:hidden;
+
 }
 
-.outline {
-  color: transparent;
 
-  -webkit-text-stroke:
-    2px #62bdec;
+
+.cta-line {
+
+    font-size:clamp(2.8rem,5vw,5.5rem);
+
+    line-height:.95;
+
+    font-weight:900;
+
+    letter-spacing:-3px;
+
+    margin:0;
+
+    color:#ffffff;
+
+    white-space:nowrap;
+
 }
 
-/* button */
+
+
+.cta-line.outline {
+
+    color:transparent;
+
+    -webkit-text-stroke:2px #62bdec;
+
+}
+
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
 
 .cta-button {
-  margin-top: 70px;
 
-  border: none;
+    margin-top:40px;
 
-  background: #7128ef;
+    border:none;
 
-  color: white;
+    background:#7128ef;
 
-  padding: 24px 42px;
+    color:#ffffff;
 
-  font-size: 1rem;
+    padding:18px 42px;
 
-  font-weight: 700;
+    font-size:.95rem;
 
-  letter-spacing: 2px;
+    font-weight:700;
 
-  border-radius: 100px;
+    letter-spacing:2px;
 
-  cursor: pointer;
+    border-radius:100px;
 
-  transition: .4s ease;
+    cursor:pointer;
 
-  display: inline-flex;
+    display:inline-flex;
 
-  align-items: center;
+    align-items:center;
 
-  gap: 15px;
+    justify-content:center;
+
+    gap:15px;
+
+    transition:.4s ease;
+
+    box-shadow:
+
+    0 20px 50px rgba(113,40,239,.35);
+
 }
+
+
 
 .cta-button span {
-  transition: .4s ease;
+
+    transition:.4s ease;
+
 }
+
+
 
 .cta-button:hover {
-  padding-left: 55px;
-  padding-right: 55px;
+
+    transform:translateY(-5px);
+
+    padding-left:52px;
+
+    padding-right:52px;
+
 }
+
+
 
 .cta-button:hover span {
-  transform: translateX(10px);
+
+    transform:translateX(10px);
+
 }
 
-/* bottom text */
+
+
+/* =====================================================
+   BOTTOM TEXT
+===================================================== */
+
 
 .cta-bottom {
-  margin-top: 80px;
 
-  opacity: .45;
+    margin-top:40px;
 
-  letter-spacing: 4px;
+    opacity:.45;
 
-  font-size: .8rem;
+    letter-spacing:4px;
 
-  animation:
-    fadeLoop 2s ease infinite;
+    font-size:.7rem;
+
+    animation:fadeLoop 2s ease infinite;
+
 }
+
+
 
 @keyframes fadeLoop {
-  0% {
-    opacity: .25;
-  }
 
-  50% {
-    opacity: .7;
-  }
+    0%{
+        opacity:.25;
+    }
 
-  100% {
-    opacity: .25;
-  }
+    50%{
+        opacity:.7;
+    }
+
+    100%{
+        opacity:.25;
+    }
+
 }
 
-/* grain */
+
+
+/* =====================================================
+   GRAIN
+===================================================== */
+
 
 .final-cta::before {
-  content: "";
 
-  position: absolute;
+    content:"";
 
-  inset: 0;
+    position:absolute;
 
-  background-image:
+    inset:0;
+
+    background-image:
+
     url("https://www.transparenttextures.com/patterns/noise.png");
 
-  opacity: .05;
+    opacity:.04;
 
-  pointer-events: none;
+    pointer-events:none;
+
 }
 
-/* mobile */
 
-@media (max-width: 768px) {
-  .cta-line {
-    font-size: 40px;
 
-    letter-spacing: -2px;
-  }
+/* =====================================================
+   TABLET
+===================================================== */
 
-  .cta-button {
-    margin-top: 50px;
 
-    padding: 18px 30px;
-  }
+@media(max-width:991px){
 
-  .cta-bottom {
-    margin-top: 50px;
-  }
 
-  .cta-glow {
-    width: 300px;
-    height: 300px;
-  }
+.final-cta {
+
+    min-height:auto;
+
+    padding:80px 5%;
+
+}
+
+
+
+.cta-line {
+
+    font-size:clamp(2.5rem,7vw,4.5rem);
+
+    letter-spacing:-2px;
+
+}
+
+
+
+.cta-button {
+
+    margin-top:35px;
+
+}
+
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+
+@media(max-width:600px){
+
+
+.final-cta {
+
+    padding:65px 20px;
+
+}
+
+
+
+.cta-line {
+
+    font-size:clamp(2rem,8vw,3rem);
+
+    line-height:1.05;
+
+    letter-spacing:-0.5px;
+
+    white-space:normal;
+
+    word-spacing:2px;
+
+}
+
+
+
+.cta-line.outline {
+
+    -webkit-text-stroke:1.2px #62bdec;
+
+}
+
+
+
+.cta-button {
+
+    margin-top:35px;
+
+    width:100%;
+
+    padding:17px 20px;
+
+    font-size:.85rem;
+
+    letter-spacing:1px;
+
+}
+
+
+
+.cta-button:hover {
+
+    padding-left:25px;
+
+    padding-right:25px;
+
+}
+
+
+
+.cta-bottom {
+
+    margin-top:30px;
+
+    font-size:.6rem;
+
+    letter-spacing:1.5px;
+
+    line-height:1.6;
+
+}
+
+
+
+.cta-glow {
+
+    width:260px;
+
+    height:260px;
+
+    filter:blur(55px);
+
+}
+
+
+}
+
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+
+@media(max-width:480px){
+
+
+.final-cta {
+
+    padding:50px 16px;
+
+}
+
+
+
+.cta-line {
+
+    font-size:clamp(1.75rem,8.5vw,2.3rem);
+
+    line-height:1.1;
+
+    letter-spacing:0px;
+
+    word-spacing:1px;
+
+}
+
+
+
+.cta-line.outline {
+
+    -webkit-text-stroke:1px #62bdec;
+
+}
+
+
+
+.cta-button {
+
+    margin-top:30px;
+
+    padding:15px 18px;
+
+    font-size:.8rem;
+
+}
+
+
+
+.cta-bottom {
+
+    margin-top:25px;
+
+    font-size:.55rem;
+
+}
+
+
+
+.cta-glow {
+
+    width:220px;
+
+    height:220px;
+
+}
+
+
 }

@@ -10,278 +10,79 @@ function AboutHero() {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
 
-  useEffect(() => {
-    const words = [
-      "GLOBAL BRANDS",
-      "MARKET LEADERS",
-      "AI COMPANIES",
-      "DIGITAL ECOSYSTEMS",
-      "FUTURE READY BUSINESSES",
-    ];
+ useEffect(() => {
 
-    let index = 0;
+  const words = [
+    "GLOBAL BRANDS",
+    "MARKET LEADERS",
+    "AI COMPANIES",
+    // "DIGITAL ECOSYSTEMS",
+    "FUTURE READY BUSINESSES",
+  ];
 
-    const interval = setInterval(() => {
-      gsap.to(changingWord.current, {
-        y: -80,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power3.inOut",
-        onComplete: () => {
-          index = (index + 1) % words.length;
+  let index = 0;
 
-          changingWord.current.innerText =
-            words[index];
+  const interval = setInterval(() => {
 
-          gsap.fromTo(
-            changingWord.current,
-            {
-              y: 80,
-              opacity: 0,
-            },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.5,
-              ease: "power3.out",
-            }
-          );
-        },
-      });
-    }, 2800);
+    if (!changingWord.current) return;
 
-    const ctx = gsap.context(() => {
 
-      /* ENTRY ANIMATION */
+    gsap.to(changingWord.current, {
 
-      const tl = gsap.timeline();
+      y: -50,
 
-      tl.from(".about-tag", {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-      })
-        .from(
-          ".line-1",
+      opacity: 0,
+
+      duration: 0.4,
+
+      ease: "power3.inOut",
+
+      onComplete: () => {
+
+
+        index = (index + 1) % words.length;
+
+
+        changingWord.current.innerText =
+          words[index];
+
+
+        gsap.fromTo(
+
+          changingWord.current,
+
           {
-            y: 120,
-            opacity: 0,
-            duration: 1,
+            y:50,
+            opacity:0,
           },
-          "-=0.4"
-        )
-        .from(
-          ".line-2",
+
           {
-            y: 120,
-            opacity: 0,
-            duration: 1,
-          },
-          "-=0.7"
-        )
-        .from(
-          ".line-3",
-          {
-            y: 120,
-            opacity: 0,
-            duration: 1,
-          },
-          "-=0.7"
-        )
-        .from(
-          ".about-description",
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-          },
-          "-=0.5"
-        )
-        .from(
-          ".hero-actions",
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-          },
-          "-=0.5"
-        )
-        .from(
-          ".about-stats > div",
-          {
-            y: 40,
-            opacity: 0,
-            stagger: 0.15,
-            duration: 0.8,
-          },
-          "-=0.4"
+            y:0,
+            opacity:1,
+            duration:.5,
+            ease:"power3.out",
+          }
+
         );
 
-      /* FLOATING BLOBS */
 
-      gsap.to(".blob-a", {
-        y: -50,
-        x: 40,
-        duration: 8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      }
 
-      gsap.to(".blob-b", {
-        y: 80,
-        x: -50,
-        duration: 10,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+    });
 
-      gsap.to(".blob-c", {
-        y: -60,
-        duration: 12,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
 
-      /* FLOATING TECH TAGS */
+  },3000);
 
-      gsap.to(".tech-pill", {
-        yPercent: -20,
-        duration: 2,
-        stagger: 0.2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
 
-      /* SCROLL ANIMATION */
 
-      const heroTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=1000",
-          scrub: 1.5,
-        },
-      });
+  return () => {
 
-      heroTl.to(
-        contentRef.current,
-        {
-          y: -180,
-          scale: 0.9,
-          opacity: 0.4,
-          ease: "none",
-        },
-        0
-      );
+    clearInterval(interval);
 
-      heroTl.to(
-        ".blob-a",
-        {
-          scale: 1.5,
-          opacity: 0.4,
-          ease: "none",
-        },
-        0
-      );
+  };
 
-      heroTl.to(
-        ".blob-b",
-        {
-          scale: 1.4,
-          opacity: 0.25,
-          ease: "none",
-        },
-        0
-      );
 
-      heroTl.to(
-        ".blob-c",
-        {
-          scale: 2,
-          opacity: 0.15,
-          ease: "none",
-        },
-        0
-      );
-
-      heroTl.to(
-        ".tech-pill",
-        {
-          y: -120,
-          opacity: 0,
-          stagger: 0.05,
-          ease: "none",
-        },
-        0
-      );
-
-      heroTl.to(
-        ".scroll-indicator",
-        {
-          opacity: 0,
-        },
-        0
-      );
-
-    }, sectionRef);
-
-    /* MOUSE PARALLAX */
-
-    const handleMouseMove = (e) => {
-      const x =
-        (e.clientX / window.innerWidth - 0.5) * 100;
-
-      const y =
-        (e.clientY / window.innerHeight - 0.5) * 100;
-
-      gsap.to(".blob-a", {
-        x: x * 0.4,
-        y: y * 0.4,
-        duration: 2,
-        overwrite: true,
-      });
-
-      gsap.to(".blob-b", {
-        x: x * -0.3,
-        y: y * -0.3,
-        duration: 2,
-        overwrite: true,
-      });
-
-      gsap.to(".blob-c", {
-        x: x * 0.2,
-        y: y * 0.2,
-        duration: 2,
-        overwrite: true,
-      });
-    };
-
-    window.addEventListener(
-      "mousemove",
-      handleMouseMove
-    );
-
-    return () => {
-      clearInterval(interval);
-
-      window.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      );
-
-      ctx.revert();
-
-      ScrollTrigger.getAll().forEach((trigger) =>
-        trigger.kill()
-      );
-    };
-
-  }, []);
-
+}, []);
   return (
     <section
       className="about-hero"
@@ -385,10 +186,6 @@ function AboutHero() {
           UI / UX Design
         </div>
 
-      </div>
-
-      <div className="scroll-indicator">
-        DISCOVER OUR STORY
       </div>
 
     </section>

@@ -21,22 +21,36 @@
   visibility: visible;
 }
 
+/* ==========================================
+   NAVIGATION
+========================================== */
+
 .overlay-nav {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
   gap: 20px;
+
+  width: 100%;
+  max-width: 1200px;
+
+  padding: 0 8%;
 }
 
 .overlay-nav a {
+  display: inline-block;
+
   text-decoration: none;
 
-  color: white;
+  color: #ffffff;
 
   font-size: 60px;
-
   font-weight: 700;
 
-  transition: 0.3s;
+  line-height: 1.1;
+
+  transition: 0.3s ease;
 }
 
 .overlay-nav a:hover {
@@ -44,18 +58,142 @@
   transform: translateX(20px);
 }
 
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
 .close-btn {
   position: absolute;
 
   top: 40px;
   right: 60px;
 
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: transparent;
   border: none;
 
-  color: white;
+  color: #ffffff;
 
   font-size: 3rem;
+  line-height: 1;
 
   cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #62bdec;
+  transform: rotate(90deg);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+  .overlay-nav {
+    padding: 0 7%;
+  }
+
+  .overlay-nav a {
+    font-size: 52px;
+  }
+
+  .close-btn {
+    top: 32px;
+    right: 40px;
+  }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .overlay-nav {
+    padding: 0 24px;
+    gap: 18px;
+  }
+
+  .overlay-nav a {
+    font-size: 38px;
+  }
+
+  .close-btn {
+    top: 24px;
+    right: 24px;
+
+    font-size: 2.5rem;
+
+    width: 48px;
+    height: 48px;
+  }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+  .overlay-nav a {
+    font-size: 32px;
+  }
+
+  .overlay-nav {
+    gap: 16px;
+  }
+
+}
+.overlay-nav a {
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+    position:relative;
+
+}
+
+
+
+.overlay-nav a.active {
+
+    color:#62bdec;
+
+}
+
+
+
+/* underline animation */
+
+.overlay-nav a.active::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:100%;
+
+    height:2px;
+
+    background:#62bdec;
+
 }

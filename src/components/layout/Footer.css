@@ -1,186 +1,418 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
 .footer {
-  background: #020059;
 
-  color: #fff;
+    position:relative;
 
-  padding: 70px 8% 30px;
+    overflow:hidden;
 
-  border-top: 1px solid rgba(255, 255, 255, .08);
+    background:#020059;
 
-  position: relative;
+    color:#ffffff;
 
-  overflow: hidden;
-}
-
-/* giant background text */
-
-.footer::before {
-  content: "CREATE";
-
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  transform:
-    translate(-50%, -50%);
-
-  font-size: 12vw;
-
-  font-weight: 900;
-
-  color: rgba(255, 255, 255, .018);
-
-  white-space: nowrap;
-
-  pointer-events: none;
-}
-
-/* top */
-
-.footer-top {
-  margin-top: 14px;
-
-  font-size: clamp(3rem, 7vw, 5.8rem);
-
-  line-height: .9;
-
-  font-weight: 900;
-}
-
-.footer-tag {
-  color: #62bdec;
-
-  letter-spacing: 5px;
-
-  font-size: 12px;
-}
-
-.footer-top h2 {
-  margin-top: 25px;
-
-  font-size:
-    clamp(4rem, 10vw, 9rem);
-
-  line-height: .85;
-
-  font-weight: 900;
-}
-
-/* middle */
-
-.footer-middle {
-
-  margin-top: 45px;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-start;
-
-  gap: 50px;
-}
-
-.footer-middle p {
-
-  max-width: 420px;
-
-  font-size: 1rem;
-
-  line-height: 1.7;
-}
-
-.footer-links {
-  display: flex;
-
-  flex-direction: column;
-
-
-  gap: 14px;
-}
-
-.footer-links a {
-  color: white;
-
-  text-decoration: none;
-
-  font-size: 1rem;
-
-  transition: .3s;
-}
-
-.footer-links a:hover {
-  color: #62bdec;
-
-  transform: translateX(10px);
-}
-
-/* bottom */
-
-.footer-bottom{
-
-    margin-top:55px;
-
-    padding-top:20px;
+    padding:55px 8% 25px;
 
     border-top:1px solid rgba(255,255,255,.08);
 
-    display:flex;
-
-    justify-content:space-between;
-
-    opacity:.7;
 }
 
-/* orange glow */
+
+
+/* ==========================================
+   BACKGROUND GLOW
+========================================== */
+
+
+.footer::before{
+
+    content:"CREATE";
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:12vw;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.02);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+}
+
+
 
 .footer::after{
 
-    width:420px;
+    content:"";
 
-    height:420px;
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
 
     right:-180px;
 
     bottom:-180px;
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(98,189,236,.12),
+        transparent 70%
+    );
+
+
+    filter:blur(100px);
+
 }
 
-/* responsive */
 
-@media (max-width:768px){
 
-    .footer{
+/* ==========================================
+   TOP
+========================================== */
 
-        padding:55px 24px 24px;
-    }
 
-    .footer-top h2{
+.footer-top{
 
-        font-size:2.7rem;
-    }
+    position:relative;
 
-    .footer-middle{
+    z-index:2;
 
-        margin-top:35px;
+}
 
-        flex-direction:column;
 
-        gap:30px;
-    }
 
-    .footer-bottom{
+.footer-tag{
 
-        margin-top:35px;
+    color:#62bdec;
 
-        flex-direction:column;
+    font-size:.75rem;
 
-        gap:12px;
-    }
+    font-weight:600;
 
-    .footer::before{
+    letter-spacing:5px;
 
-        font-size:18vw;
-    }
+    text-transform:uppercase;
+
+}
+
+
+
+.footer-top h2{
+
+
+    margin-top:15px;
+
+
+    font-size:clamp(3rem,8vw,6.5rem);
+
+
+    line-height:.9;
+
+
+    font-weight:900;
+
+
+    letter-spacing:-3px;
+
+}
+
+
+
+/* ==========================================
+   MIDDLE
+========================================== */
+
+
+.footer-middle{
+
+    position:relative;
+
+    z-index:2;
+
+
+    margin-top:35px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:flex-start;
+
+
+    gap:70px;
+
+}
+
+
+
+.footer-middle p{
+
+
+    max-width:480px;
+
+
+    color:rgba(255,255,255,.72);
+
+
+    line-height:1.8;
+
+}
+
+
+
+.footer-links{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:14px;
+
+}
+
+
+
+.footer-links a{
+
+
+    color:#ffffff;
+
+
+    text-decoration:none;
+
+
+    font-size:1rem;
+
+
+    font-weight:500;
+
+
+    transition:.35s ease;
+
+}
+
+
+
+.footer-links a:hover{
+
+
+    color:#62bdec;
+
+
+    transform:translateX(8px);
+
+}
+
+
+
+/* ==========================================
+   BRAND LINK
+========================================== */
+
+
+.footer-brand {
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+}
+
+
+
+.footer-brand:hover {
+
+    color:#62bdec;
+
+}
+
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+
+.footer-bottom{
+
+
+    position:relative;
+
+    z-index:2;
+
+
+    margin-top:35px;
+
+
+    padding-top:18px;
+
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    gap:20px;
+
+
+    color:rgba(255,255,255,.6);
+
+
+    font-size:.9rem;
+
+}
+
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+
+@media(max-width:1024px){
+
+
+.footer{
+
+    padding:45px 7% 25px;
+
+}
+
+
+
+.footer-middle{
+
+    gap:40px;
+
+}
+
+
+}
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+.footer{
+
+    padding:40px 24px 20px;
+
+}
+
+
+
+.footer::before{
+
+    font-size:20vw;
+
+}
+
+
+
+.footer-top h2{
+
+
+    font-size:3rem;
+
+
+    letter-spacing:-2px;
+
+}
+
+
+
+.footer-middle{
+
+
+    margin-top:30px;
+
+
+    flex-direction:column;
+
+
+    gap:25px;
+
+}
+
+
+
+.footer-bottom{
+
+
+    margin-top:25px;
+
+
+    padding-top:15px;
+
+
+    flex-direction:column;
+
+
+    align-items:flex-start;
+
+
+    gap:8px;
+
+
+    font-size:.85rem;
+
+}
+
+
+}
+
+/* ==========================================
+   REMOVE EXTRA FOOTER DIVIDERS
+========================================== */
+
+.footer,
+.footer-top,
+.footer-middle,
+.footer-links,
+.footer-links a {
+
+    border-top:none !important;
+
+    border-bottom:none !important;
 
 }
