@@ -32,7 +32,7 @@ const portfolio = [
     icon: MonitorCog,
     description:
       "NABL accredited laboratory website providing diagnostic testing and healthcare services.",
-    tech: ["Wordpress", "Corporate", "Responsive"],
+    tech: ["Wordpress", "Responsive", "Corporate"],
   },
 
   {
@@ -44,7 +44,7 @@ const portfolio = [
     icon: MonitorCog,
     description:
       "Wash-E Laundry takes it off your hands from hotel linen and hostel bedding to corporate uniforms and university wear.",
-    tech: ["React", "Corporate", "Responsive"],
+    tech: ["React", "Responsive", "Corporate"],
   },
 
   {
@@ -56,7 +56,7 @@ const portfolio = [
     icon: Globe,
     description:
       "Corporate engineering and manufacturing website showcasing industrial solutions and global capabilities.",
-    tech: ["Corporate", "Responsive", "SEO"],
+    tech: ["React", "Corporate", "Seo",],
   },
 
   {
@@ -68,7 +68,7 @@ const portfolio = [
     icon: Globe,
     description:
       "Corporate industrial website focused on vacuum automation, gripping and lifting solutions.",
-    tech: ["Wordpress", "UI/UX", "SEO"],
+    tech: ["Wordpress", "UI/UX", "Industrial"],
   },
 
   {
@@ -80,7 +80,7 @@ const portfolio = [
     icon: ShoppingBag,
     description:
       "Global fashion ecommerce platform with modern shopping experience and premium UI.",
-    tech: ["Ecommerce", "Responsive", "UX"],
+    tech: ["Shopify", "UX", "Ecommerce"],
   },
 
   {
@@ -92,7 +92,7 @@ const portfolio = [
     icon: ShoppingBag,
     description:
       "Premium Indian fashion and lifestyle ecommerce platform with beautiful storytelling.",
-    tech: ["Shopify", "UI/UX", "SEO"],
+    tech: ["Shopify", "UI/UX", "Ecommerce"],
   },
 
   {
@@ -104,7 +104,7 @@ const portfolio = [
     icon: Globe,
     description:
       "Corporate business website showcasing manufacturing excellence and global presence.",
-    tech: ["React", "Corporate", "Responsive"],
+    tech: ["Wordpress", "Responsive", "Corporate"],
   },
 
   {
@@ -116,7 +116,7 @@ const portfolio = [
     icon: ShoppingBag,
     description:
       "Leading ethnic fashion ecommerce platform with premium shopping experience.",
-    tech: ["Ecommerce", "Performance", "SEO"],
+    tech: ["Shopify", "SEO", "Ecommerce"],
   },
 
   {
@@ -128,7 +128,7 @@ const portfolio = [
     icon: LayoutDashboard,
     description:
       "Luxury real estate website showcasing premium residential and commercial properties.",
-    tech: ["Corporate", "CMS", "SEO"],
+    tech: ["Wordpress", "SEO", "Real Estate"],
   },
 ];
 
