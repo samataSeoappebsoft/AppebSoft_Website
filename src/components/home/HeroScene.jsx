@@ -91,35 +91,24 @@ function HeroScene() {
         <div className="hero-stats">
 
           <div>
-            <h3>1200+</h3>
+            <h3>120+</h3>
             <span>Projects</span>
           </div>
 
           <div>
-            <h3>900+</h3>
+            <h3>50+</h3>
             <span>Clients</span>
           </div>
 
           <div>
-            <h3>25+</h3>
+            <h3>5+</h3>
             <span>Countries</span>
           </div>
 
         </div>
 
       </div>
-{/* 
-      <div className="floating-card card-1">
-        React / Next.js
-      </div>
 
-      <div className="floating-card card-2">
-        AI Development
-      </div>
-
-      <div className="floating-card card-3">
-        Cloud Solutions
-      </div> */}
 
       <div className="scroll-indicator">
         SCROLL

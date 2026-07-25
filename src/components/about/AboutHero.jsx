@@ -119,7 +119,7 @@ function AboutHero() {
         </div>
 
         <p className="about-description">
-          AppeeSoft partners with startups,
+          AppeebSoft partners with startups,
           enterprises and ambitious businesses
           to create software, websites,
           ecommerce platforms, AI solutions
@@ -142,17 +142,17 @@ function AboutHero() {
         <div className="about-stats">
 
           <div>
-            <h3>900+</h3>
+            <h3>150+</h3>
             <span>Businesses Served</span>
           </div>
 
           <div>
-            <h3>1200+</h3>
+            <h3>120+</h3>
             <span>Projects Delivered</span>
           </div>
 
           <div>
-            <h3>25+</h3>
+            <h3>5+</h3>
             <span>Countries Reached</span>
           </div>
 

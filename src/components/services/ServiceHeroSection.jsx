@@ -372,7 +372,7 @@ function ServiceHero() {
 
         <p className="service-description">
 
-          AppeeSoft delivers modern digital solutions
+          AppeebSoft delivers modern digital solutions
           that help startups, SMEs and enterprises
           accelerate growth.
 

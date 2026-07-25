@@ -7,7 +7,7 @@ const milestones = [
     year: "2019",
     title: "Where It All Began",
     description:
-      "AppeeSoft was founded with a vision to build meaningful digital solutions that help businesses innovate, grow, and succeed.",
+      "AppeebSoft was founded with a vision to build meaningful digital solutions that help businesses innovate, grow, and succeed.",
     image:"/grow.png", },
   {
     year: "2021",

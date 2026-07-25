@@ -2,7 +2,7 @@ import "./Achievements.css";
 
 const stats = [
   { number: "120+", label: "Products Delivered" },
-  { number: "80+", label: "Global Clients" },
+  { number: "50+", label: "Global Clients" },
   { number: "10+", label: "Industries Served" },
   { number: "5★", label: "Client Rating" },
 ];

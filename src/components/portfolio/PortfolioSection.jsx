@@ -213,9 +213,9 @@ function PortfolioSection() {
 
                   <div className="portfolio-overlay">
 
-                    <div className="portfolio-badge">
+                    {/* <div className="portfolio-badge">
                       {project.category}
-                    </div>
+                    </div> */}
 
                     <div className="portfolio-arrow">
                       <ArrowUpRight size={24} />
@@ -271,9 +271,6 @@ function PortfolioSection() {
 
                   >
                     Visit Website
-
-                    <ArrowUpRight size={18} />
-
                   </a>
 
                 </div>
@@ -285,12 +282,7 @@ function PortfolioSection() {
 
             <div className="portfolio-empty">
 
-              <h3>No Projects Found</h3>
-
-              <p>
-                Please choose another category.
-              </p>
-
+              <h3>Coming Soon</h3>
             </div>
 
           )}

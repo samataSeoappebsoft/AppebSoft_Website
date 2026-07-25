@@ -147,7 +147,7 @@ useEffect(() => {
           </h3>
 
           <p>
-            AppeeSoft is a digital transformation company helping startups,
+            AppeebSoft is a digital transformation company helping startups,
             brands and enterprises build modern digital experiences through
             strategy, design, engineering and innovation.
 
@@ -162,12 +162,12 @@ useEffect(() => {
           <div className="stats">
 
             <div>
-              <h4>500+</h4>
+              <h4>100+</h4>
               <span>Projects</span>
             </div>
 
             <div>
-              <h4>150+</h4>
+              <h4>50+</h4>
               <span>Clients</span>
             </div>
 

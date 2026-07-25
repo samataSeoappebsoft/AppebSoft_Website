@@ -10,7 +10,7 @@ const testimonials = [
     image:
       "https://randomuser.me/api/portraits/men/32.jpg",
     review:
-      "AppeeSoft completely transformed our digital presence and increased our conversions significantly."
+      "AppeebSoft completely transformed our digital presence and increased our conversions significantly."
   },
   {
     name: "Sarah Wilson",

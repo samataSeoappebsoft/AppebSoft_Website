@@ -53,7 +53,7 @@ function Navbar() {
           <Link to="/" className="logo-link">
             <img
               src={isMobile || scrolled ? ColorLogo : WhiteLogo}
-              alt="AppeeSoft Logo"
+              alt="AppeebSoft Logo"
               className="logo"
             />
           </Link>

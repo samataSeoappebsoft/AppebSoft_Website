@@ -865,6 +865,11 @@
     padding-bottom: 70px;
   }
 
+  .hero-tag {
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 22px;
+    }
 }
 
 

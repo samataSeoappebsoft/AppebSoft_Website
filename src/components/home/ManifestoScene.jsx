@@ -179,7 +179,7 @@ Building The Digital Future.
 
 
 <p>
-AppeeSoft is a digital transformation company helping startups,
+AppeebSoft is a digital transformation company helping startups,
 brands and enterprises build modern digital experiences through
 strategy, design, engineering and innovation.
 
@@ -201,7 +201,7 @@ that help businesses grow with confidence.
 <div>
 
 <h4>
-500+
+100+
 </h4>
 
 <span>
@@ -214,7 +214,7 @@ Projects
 <div>
 
 <h4>
-150+
+50+
 </h4>
 
 <span>
